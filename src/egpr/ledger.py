@@ -74,10 +74,28 @@ class Ledger:
         self.path = Path(path)
         self.allow_paid_calls = allow_paid_calls
         self.limit = money(max_new_paid_usd)
+        self.rows = []
+        self._read_offset = 0
         self.reload()
 
     def reload(self):
-        self.rows = [json.loads(line) for line in self.path.read_text().splitlines()] if self.path.exists() else []
+        if not self.path.exists():
+            if self._read_offset:
+                raise RuntimeError("Campaign ledger disappeared")
+            return
+        size = self.path.stat().st_size
+        if size < self._read_offset:
+            raise RuntimeError("Campaign ledger was truncated")
+        if size == self._read_offset:
+            return
+        with self.path.open("rb") as f:
+            f.seek(self._read_offset)
+            raw = f.read()
+        if not raw.endswith(b"\n"):
+            raise RuntimeError("Incomplete ledger tail; preserve and reconcile before continuing")
+        parsed = [json.loads(line) for line in raw.splitlines()]
+        self.rows.extend(parsed)
+        self._read_offset += len(raw)
 
     @contextmanager
     def locked(self):
@@ -101,6 +119,7 @@ class Ledger:
             f.flush()
             import os
             os.fsync(f.fileno())
+            self._read_offset = f.tell()
         self.rows.append(row)
 
     @property

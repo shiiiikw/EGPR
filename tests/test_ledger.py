@@ -56,3 +56,21 @@ def test_interruption_reservation_survives_restart(tmp_path):
         ledger.run(request(), lambda _: None, paid=True, maximum_usd="0.3")
     ledger.reconcile(ledger.rows[0]["attempt_id"], "0.05", "mock-provider-receipt")
     assert ledger.occupancy == Decimal("0.05")
+
+
+def test_incremental_reader_never_silently_loses_existing_records(tmp_path):
+    path = tmp_path / "ledger.jsonl"
+    a = Ledger(path)
+    a.run(request(), lambda _: Receipt({"ok": True}))
+    b = Ledger(path)
+    count = len(b.rows)
+    b.reload()
+    assert len(b.rows) == count
+    a.run(request(), lambda _: pytest.fail("cache"))
+    b.reload()
+    assert len(b.rows) == count + 1
+    with path.open("ab") as f:
+        f.write(b'{"status":')
+    with pytest.raises(RuntimeError, match="Incomplete"):
+        b.reload()
+    assert len(b.rows) == count + 1

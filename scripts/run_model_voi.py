@@ -72,8 +72,11 @@ def main():
                                 and r["request_hash"] in keys and not r.get("access_blocked")}
                     cost = sum((Decimal(r["estimated_usd"]) for r in receipts.values()
                                 if r.get("estimated_usd") is not None), Decimal(0))
+                    logical = sum((Decimal(r["logical_uncached_usd"]) for r in receipts.values()
+                                   if r.get("logical_uncached_usd") is not None), Decimal(0))
                     record = {"decision": asdict(decision), "terminal_traces": ev.traces,
                               "unique_model_requests": len(keys), "cold_usage_estimate_usd": str(cost),
+                              "undiscounted_logical_usd": str(logical),
                               "unpriced_requests": len(keys) - sum(r.get("estimated_usd") is not None for r in receipts.values()),
                               "bound_model_fingerprint": value_id}
                     records[policy] = record
