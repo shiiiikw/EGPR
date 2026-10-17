@@ -31,6 +31,14 @@
   ],
   "provider_status": {
     "openai": "Paid inference succeeded after the user replenished credits; budget and cached failure retained.",
-    "together": "Official SDK 2.41.0 metadata and three Qwen role calls succeeded; a subsequent HTTP 402 credit_limit keeps the paid queue blocked. Authenticated identity works; beta billing-usage GET returned 404. User reported replenishing credits; current balance cannot be verified via available API."
-  }
+    "together": "Replacement user-supplied credential passed all four model access gates. First Qwen four-state queue completed; MiniMax HTTP 429 rate_limit triggered a recorded stop. Resume after cooldown with two-second request-start spacing; no automatic retries and no quota bypass."
+  },
+  "provider_minimum_request_interval_seconds": {
+    "together": 2
+  },
+  "sequential_development_models": [
+    "gpt-6-luna",
+    "deepseek-ai/DeepSeek-V4-Pro-0813"
+  ],
+  "sequential_selection_note": "Two accessible families selected for sequential development before inspecting the DeepSeek model-VOI results; not a frozen paper roster."
 }

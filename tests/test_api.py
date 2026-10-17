@@ -46,13 +46,18 @@ def test_http_cache_survives_invalid_model_output_and_replicates_are_distinct(tm
 
 def test_http_access_errors_are_retained_and_stop_campaign(tmp_path):
     def opener(req, **_):
-        raise urllib.error.HTTPError(req.full_url, 429, "quota", {}, io.BytesIO(b'{"error":"quota"}'))
+        raise urllib.error.HTTPError(req.full_url, 429, "quota", {
+            "Retry-After": "2", "X-RateLimit-Reset": "2", "Set-Cookie": "private-test-cookie"},
+            io.BytesIO(b'{"error":"quota"}'))
     ledger = Ledger(tmp_path / "calls.jsonl", allow_paid_calls=True, max_new_paid_usd="1")
     backend = ChatBackend({"OPENAI_API_KEY": "fake"}, Tariff("1", "2"), opener=opener)
     with pytest.raises(AccessBlocked):
         call_json(ledger, request(), backend, maximum_usd="0.2")
     assert ledger.occupancy == Decimal("0.2")  # No made-up zero bill on failure.
     assert any("quota" in r.get("response", {}).get("raw_body", "") for r in ledger.rows)
+    envelope = next(r["response"] for r in ledger.rows if r["status"] == "received")
+    assert envelope["rate_limit_headers"] == {"retry-after": "2", "x-ratelimit-reset": "2"}
+    assert "private-test-cookie" not in ledger.path.read_text()
     with pytest.raises(AccessBlocked):
         ledger.run(replace(request(), model_snapshot="other"), lambda _: pytest.fail("no switch"),
                    paid=True, maximum_usd="0.2")

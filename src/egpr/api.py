@@ -155,9 +155,12 @@ class ChatBackend:
             raw = response.read().decode("utf-8", errors="replace")
             status = response.status
             request_id = response.headers.get("x-request-id") or response.headers.get("x-amzn-requestid")
+            response_headers = {k.lower(): v for k, v in response.headers.items()
+                                if k.lower() == "retry-after" or k.lower().startswith("x-ratelimit-")}
         # JSON extraction happens after persisting the raw transport envelope.
         envelope = {"http_status": status, "raw_body": raw,
-                    "elapsed_seconds": time.perf_counter() - start}
+                    "elapsed_seconds": time.perf_counter() - start,
+                    "rate_limit_headers": response_headers}
         try:
             parsed = json.loads(raw)
         except (ValueError, TypeError):

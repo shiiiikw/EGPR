@@ -48,19 +48,23 @@ class ControlledEnvironment:
 
 
 def run_episode(state: State, queries: tuple[Query, ...], environment: ControlledEnvironment,
-                *, policy="P", budget=EpisodeBudget(), finalizer: Callable | None = None):
-    controller = Controller(policy)
+                *, policy="P", budget=EpisodeBudget(), finalizer: Callable | None = None,
+                evaluator: Evaluator | None = None):
+    controller = Controller(policy, evaluator=evaluator)
     remaining = list(queries)
     actions = []
     information = branches = searches = rejected = 0
     cost, delivered = F(0), None
     termination = "step_budget_exhausted"
-    finalizer = finalizer or (lambda s: Evaluator().terminal(s)[1])
+    finalizer = finalizer or (lambda s: controller.evaluator.terminal(s)[1])
     last_certificates = ()
+    finalization_work = {}
 
     def finalize(reason):
-        nonlocal delivered, rejected, termination
+        nonlocal delivered, rejected, termination, finalization_work
+        before = asdict(controller.evaluator.work)
         proposal = finalizer(state)
+        finalization_work = {k: v - before[k] for k, v in asdict(controller.evaluator.work).items()}
         check = guard(state, proposal) if proposal is not None else None
         if check and not check["allowed"]:
             rejected += 1
@@ -111,5 +115,6 @@ def run_episode(state: State, queries: tuple[Query, ...], environment: Controlle
             "score": environment.score(state, delivered), "information_actions": information,
             "search_actions": searches, "counterfactual_branches": branches,
             "modeled_information_cost": cost, "rejected_final_proposals": rejected,
+            "finalization_work": finalization_work,
             "unresolved_conditions": sorted(c for c, (v, _) in state.facts.items() if v is None),
             "actions": actions, "final_state": state}

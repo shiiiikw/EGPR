@@ -2,6 +2,8 @@
 import atexit
 import io
 import json
+import math
+import time
 
 from .api import ChatBackend, ENDPOINTS
 
@@ -20,9 +22,14 @@ class TogetherBackend(ChatBackend):
     authenticated metadata request succeeded, so account access was not assumed
     broken. SDK retries are explicitly disabled, including on HTTP errors.
     """
-    def __init__(self, credentials, tariff, *, timeout=45, client=None, status_errors=()):
+    def __init__(self, credentials, tariff, *, timeout=45, client=None, status_errors=(),
+                 min_interval_seconds=2.0, monotonic=time.monotonic, sleep=time.sleep):
+        if not math.isfinite(min_interval_seconds) or min_interval_seconds < 0:
+            raise ValueError("Request interval must be finite and nonnegative")
         self.client = client
         self.status_errors = status_errors
+        self.min_interval_seconds = min_interval_seconds
+        self._clock, self._sleep, self._next_start = monotonic, sleep, 0.0
         super().__init__(credentials, tariff, timeout=timeout, opener=self._open)
 
     def _open(self, request, *, context, timeout):
@@ -37,6 +44,10 @@ class TogetherBackend(ChatBackend):
                 http_client=httpx.Client(verify=context, timeout=timeout))
             self.status_errors = (APIStatusError,)
             atexit.register(self.client.close)
+        delay = self._next_start - self._clock()
+        if delay > 0:
+            self._sleep(delay)
+        self._next_start = self._clock() + self.min_interval_seconds
         try:
             raw = self.client.chat.completions.with_raw_response.create(**json.loads(request.data), timeout=timeout)
             response = raw.http_response
