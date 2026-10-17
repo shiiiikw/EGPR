@@ -80,6 +80,12 @@ class Belief:
                            if world & (1 << i)), total)
                 for i, cid in enumerate(self.condition_ids)}
 
+    @cached_property
+    def _posteriors(self) -> dict[tuple[int, int], Belief | None]:
+        # Computational cache only: cached_property is excluded from dataclass
+        # serialization, equality and the public state's provenance fingerprint.
+        return {}
+
     def condition(self, observed: dict[str, bool]) -> Belief | None:
         if not observed:
             return self
@@ -89,12 +95,19 @@ class Belief:
             mask |= bit
             if answer:
                 value |= bit
+        key = (mask, value)
+        if key in self._posteriors:
+            return self._posteriors[key]
         rows = [(w, p) for w, p in zip(self.worlds, self.weights) if w & mask == value]
         if not rows:
+            self._posteriors[key] = None
             return None  # The public observation contradicts the modeled support.
         if len(rows) == len(self.worlds):
+            self._posteriors[key] = self
             return self
-        return Belief(self.condition_ids, tuple(w for w, _ in rows), tuple(p for _, p in rows))
+        result = Belief(self.condition_ids, tuple(w for w, _ in rows), tuple(p for _, p in rows))
+        self._posteriors[key] = result
+        return result
 
 
 @dataclass(frozen=True)
@@ -164,11 +177,22 @@ class State:
                 raise ValueError("Plan references an unknown condition")
 
     @cached_property
+    def condition_map(self) -> dict[str, Condition]:
+        return {c.condition_id: c for c in self.conditions}
+
+    @cached_property
+    def evidence_map(self) -> dict[str, tuple[Evidence, ...]]:
+        result = {c.condition_id: [] for c in self.conditions}
+        for e in self.evidence:
+            result[e.condition_id].append(e)
+        return {k: tuple(v) for k, v in result.items()}
+
+    @cached_property
     def facts(self) -> dict[str, tuple[bool | None, bool]]:
         result = {}
         for c in self.conditions:
-            values = {e.observed_value for e in self.evidence
-                      if e.condition_id == c.condition_id and e.observed_value is not None}
+            values = {e.observed_value for e in self.evidence_map[c.condition_id]
+                      if e.observed_value is not None}
             result[c.condition_id] = (next(iter(values)) if len(values) == 1 else None,
                                       len(values) > 1)
         return result
@@ -189,7 +213,7 @@ class State:
         return digest(self)
 
     def condition_token(self, cid: str):
-        return tuple(e for e in self.evidence if e.condition_id == cid)
+        return self.evidence_map[cid]
 
     def observe(self, cid: str, value: bool | None, *, source_id: str,
                 source_version: str = "v1", span: str = "typed observation") -> State:

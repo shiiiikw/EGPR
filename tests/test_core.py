@@ -186,3 +186,24 @@ def test_conflicted_preference_bound_does_not_assume_resolution():
     e = Evaluator()
     bound = BoundIndex(s, e).bounds(q, e.terminal(s)[0])
     assert bound.lower <= e.q_value(s, q) <= bound.upper
+
+
+def test_shared_posterior_cache_preserves_joint_model_and_fingerprint():
+    s = example(weights=(1, 2, 3, 9))
+    before = s.fingerprint
+    for observed in ({"c0": True}, {"c1": False}, {"c0": True, "c1": False}):
+        cached = s.prior.condition(observed)
+        fresh = replace(s.prior).condition(observed)
+        assert cached == fresh and cached.probabilities == fresh.probabilities
+        assert s.prior.condition(observed) is cached
+    assert replace(s).fingerprint == before
+
+
+def test_exact_query_witness_reconstructs_value():
+    s = example()
+    q = queries()[0]
+    e = Evaluator()
+    base = e.terminal(s)[0]
+    value, witness = e.evaluate_query(s, q, base)
+    assert value == sum(p * lo for _, p, lo, hi in witness) - base - q.cost
+    assert all(lo == hi for _, _, lo, hi in witness)

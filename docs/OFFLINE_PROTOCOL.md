@@ -81,3 +81,19 @@ metadata, raw decisions and witnesses, a verification summary and a completion
 status. The runner refuses to overwrite results. Real data qualification is a
 separate read-only operation; raw private project artifacts are not copied into
 this public repository.
+
+## v0.1 ordinary implementation optimization
+
+The first 180-instance run (`327953b`) found zero action/certificate errors but
+P's wall time was 0.839 of B2, 1.074 of B1 and 1.307 of A1. A development profile
+identified repeated joint-posterior computation and dependency-key construction.
+v0.1 caches posterior projections in the **common belief provider for every
+method**, indexes scoped evidence once per public state, and computes each query
+set's certificate fingerprint once. B2 and B3 receive the same improvements as P.
+Exact evaluated branches now retain their numerical witnesses as well.
+
+The same complete grid is rerun as a software regression/engineering comparison,
+not a new independent sample or an unseen effectiveness test. Original results
+remain available. Neither priors, rewards, stopping rules nor instance selection
+are tuned. The public prior cache is separate for every method; it persists across
+the three publicly collected states. No oracle-warmed cache is inherited.

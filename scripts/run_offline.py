@@ -95,12 +95,13 @@ def main():
                     tracemalloc.start()
                 start, cpu = time.perf_counter(), time.process_time()
                 controller = Controller(policy)
+                policy_prior = replace(states[0].prior)
                 decisions, revisions = [], []
                 previous = None
                 for t, source in enumerate(states):
                     # New dataclass instances clear cached_property values, so
                     # timed policies do not inherit oracle-warmed belief caches.
-                    state = replace(source, prior=replace(source.prior))
+                    state = replace(source, prior=policy_prior)
                     if previous is not None:
                         revisions.append(revise(previous, state, tuple(decisions[-1].certificates)))
                     decisions.append(controller.decide(state, qs))
@@ -154,7 +155,8 @@ def main():
     write(args.output / "paired_instances.json", paired)
     write(args.output / "summary.json", summary)
     write(args.output / "verification.json", audit)
-    if source_manifest() != manifest["file_sha256"]:
+    if any(hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected
+           for name, expected in manifest["file_sha256"].items()):
         raise RuntimeError("Source changed during run")
     print(json.dumps({"audit": audit, "comparisons": comparisons}, indent=2))
     if not audit["passed"]:

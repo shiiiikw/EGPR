@@ -41,10 +41,9 @@ class Evaluator:
         self._values: dict[tuple, F] = {}
 
     def _key(self, state: State, plan: Plan):
-        conditions = {c.condition_id: c for c in state.conditions}
         return (plan, state.required_needs, state.source_snapshot,
                 state.candidate_pool_version, state.utility_version,
-                tuple((conditions[cid], state.condition_token(cid)) for cid, _ in plan.requirements))
+                tuple((state.condition_map[cid], state.condition_token(cid)) for cid, _ in plan.requirements))
 
     def status(self, state: State, plan: Plan) -> PlanStatus:
         use_cache = self.cache and state.dependencies_complete
@@ -100,15 +99,21 @@ class Evaluator:
         return best_value, best_id
 
     def q_value(self, state: State, query: Query, base: F | None = None) -> F:
+        return self.evaluate_query(state, query, base)[0]
+
+    def evaluate_query(self, state: State, query: Query, base: F | None = None):
         if base is None:
             base = self.terminal(state)[0]
         total = F(0)
+        witness = []
         for observation, probability in outcomes(state, query):
             self.work.branch_evaluations += 1
             self.work.posterior_updates += 1
             child = state.observe_query(query, observation)
-            total += probability * self.terminal(child)[0]
-        return total - base - query.cost
+            value = self.terminal(child)[0]
+            total += probability * value
+            witness.append((observation, probability, value, value))
+        return total - base - query.cost, tuple(witness)
 
 
 @dataclass(frozen=True)
@@ -242,6 +247,7 @@ class Controller:
         base, _ = self.evaluator.terminal(state)
         intervals: dict[str, Interval] = {}
         certificates: list[Certificate] = []
+        query_set_fingerprint = None
         evaluated: set[str] = set()
         removed: set[str] = set()
         screen = self.screen and state.structure_trusted and state.dependencies_complete
@@ -262,8 +268,10 @@ class Controller:
                 for qid in sorted(active):
                     iv = intervals[qid]
                     if qid not in removed and qid != comparator and iv.upper < lower:
+                        if query_set_fingerprint is None:
+                            query_set_fingerprint = digest(queries)
                         certificates.append(Certificate(qid, iv.lower, iv.upper, comparator, lower,
-                            state.fingerprint, digest(queries), iv.branches))
+                            state.fingerprint, query_set_fingerprint, iv.branches))
                         self.evaluator.work.certificates += 1
                         removed.add(qid)
             pending = [qid for qid in active if qid not in removed and qid not in evaluated
@@ -277,8 +285,8 @@ class Controller:
             if branch_budget is not None and spent + required > branch_budget:
                 selected = best_lower()[1]
                 return finish(selected, intervals, certificates, "counterfactual_budget_exhausted", False)
-            value = self.evaluator.q_value(state, q, base)
-            intervals[qid] = Interval(value, value)
+            value, witness = self.evaluator.evaluate_query(state, q, base)
+            intervals[qid] = Interval(value, value, witness)
             evaluated.add(qid)
         return finish(best_lower()[1], intervals, certificates, fallback)
 
