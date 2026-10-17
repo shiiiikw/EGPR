@@ -83,3 +83,9 @@ Completion counts must accompany request reductions: a truncated Planner can
 terminate a pipeline early and make it appear cheaper. The output audit records
 unique B2 requests, finish reasons, parse failures, output caps and reported
 reasoning tokens. Missing usage fields are not silently interpreted as zero.
+
+The completed cap comparison found 14 response errors and 31 no-delivery
+outcomes at 1,536 tokens, versus 15 and 29 at 768. Both used 52 B2 terminal
+evaluations. See the [paired table](../reports/qwen_caps_comparison_v0_10/table.md).
+The resulting [concise-output diagnostic](OUTPUT_STYLE_DIAGNOSTIC.md) is a
+separate prompt setting with unchanged role schemas and full public context.

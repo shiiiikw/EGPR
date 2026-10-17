@@ -1,0 +1,61 @@
+{
+  "scope": "descriptive development model/state pairs; counterfactual branches are not independent cases",
+  "source_runs": [
+    {
+      "run": "model_voi_qwen_cap1536_v0_10",
+      "replicate_id": "model-voi-development-0",
+      "input_sha256": {
+        "manifest.json": "0de55d54513e3ec2d5cdef1f10928c346c366a7611f1427981fc9b0fc27548b0",
+        "summary.json": "ca8049bfb75240426e6ce9959644a98b4f3867ba207bae858dbf85c23f411abf",
+        "traces.jsonl": "433e3c7ef7469ce96b40fce38c7175d71211c20cc3b21480ca260bf0fb7a6c00"
+      }
+    }
+  ],
+  "models": {
+    "Qwen/Qwen3.5-9B-cap1536": {
+      "model_state_pairs": 4,
+      "methods": {
+        "B1": {
+          "unique_requests_summed_over_states": 130,
+          "logical_usd": "0.03649317",
+          "unpriced_requests": 0
+        },
+        "B2": {
+          "unique_requests_summed_over_states": 130,
+          "logical_usd": "0.03649317",
+          "unpriced_requests": 0
+        },
+        "B3": {
+          "unique_requests_summed_over_states": 76,
+          "logical_usd": "0.01912922",
+          "unpriced_requests": 0
+        },
+        "A1": {
+          "unique_requests_summed_over_states": 76,
+          "logical_usd": "0.01912922",
+          "unpriced_requests": 0
+        },
+        "P": {
+          "unique_requests_summed_over_states": 76,
+          "logical_usd": "0.01912922",
+          "unpriced_requests": 0
+        }
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      },
+      "B2_terminal_audit": {
+        "terminal_evaluations": 52,
+        "initial_guard_rejected": 0,
+        "final_guard_rejected": 0,
+        "parse_failure": 14,
+        "no_delivery": 31
+      },
+      "P_B3_equal": true
+    }
+  },
+  "cost_note": "Logical cost prices each unique request once without provider cache discounts; not a bill.",
+  "guard_note": "B2 enumerated terminal evaluations only, including abstentions and failed recovery. Not an online task success rate."
+}
