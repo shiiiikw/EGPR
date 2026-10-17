@@ -69,6 +69,8 @@ def test_usage_cost_cache_write_and_reasoning_are_not_double_counted():
     assert tariff.estimate({"prompt_tokens": 2, "completion_tokens": 1,
                             "prompt_tokens_details": {"cached_tokens": 3}}) == (None, None)
     assert tariff.estimate(None) == (None, None)
+    assert tariff.estimate({"prompt_tokens": 2, "completion_tokens": 1,
+                            "prompt_tokens_details": 3}) == (None, None)
 
 
 def test_fail_closed_request_and_json_validation():
@@ -109,3 +111,17 @@ def test_two_instances_refresh_ledger_and_reject_concurrent_writers(tmp_path):
     with a.locked():
         with pytest.raises(RuntimeError, match="Another process"):
             b.run(request(), lambda _: None, paid=True)
+
+
+def test_external_access_resolution_is_explicit_and_preserves_reservations(tmp_path):
+    ledger = Ledger(tmp_path / "calls", allow_paid_calls=True, max_new_paid_usd="1")
+    def blocked(_):
+        return Receipt({"error": "quota"}, billed_usd=None, access_blocked=True)
+    with pytest.raises(AccessBlocked):
+        ledger.run(request(), blocked, paid=True, maximum_usd="0.2")
+    ledger.resume_after_access_resolution("Test fixture: provider balance restored by operator")
+    assert not ledger.access_blocked and ledger.occupancy == Decimal("0.2")
+    assert ledger.run(request(), lambda _: Receipt({"ok": True}, "0.01"),
+                      paid=True, maximum_usd="0.2") == {"ok": True}
+    assert ledger.occupancy == Decimal("0.21")
+    assert sum(r["status"] == "received" for r in ledger.rows) == 2

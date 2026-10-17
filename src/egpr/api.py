@@ -88,6 +88,8 @@ class Tariff:
             return None, None
         prompt, output = usage.get("prompt_tokens"), usage.get("completion_tokens")
         details = usage.get("prompt_tokens_details") or {}
+        if not isinstance(details, dict):
+            return None, None
         cached = details.get("cached_tokens", usage.get("cached_tokens", 0))
         if any(type(n) is not int or n < 0 for n in (prompt, output, cached)) or cached > prompt:
             return None, None

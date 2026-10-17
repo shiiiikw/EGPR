@@ -119,14 +119,36 @@ class Ledger:
 
     @property
     def access_blocked(self):
-        return any(r["status"] == "access_blocked" or r.get("access_blocked") for r in self.rows)
+        blocked = False
+        for row in self.rows:
+            if row["status"] == "access_resolved":
+                blocked = False
+            elif row["status"] == "access_blocked" or row.get("access_blocked"):
+                blocked = True
+        return blocked
+
+    def resume_after_access_resolution(self, resolution_note: str):
+        """Explicit operator action only after access/billing has been resolved.
+
+        This preserves every response and outstanding cost reservation. It is
+        not called automatically, and it does not resample ordinary model errors.
+        """
+        if not resolution_note.strip():
+            raise ValueError("Document the external access resolution")
+        with self.locked():
+            if not self.access_blocked:
+                raise ValueError("No access failure to resolve")
+            self.append({"status": "access_resolved", "resolution_note": resolution_note})
 
     def run(self, request: Request, invoke, *, paid=False, maximum_usd="0") -> dict:
         with self.locked():
             return self._run(request, invoke, paid=paid, maximum_usd=maximum_usd)
 
     def _run(self, request, invoke, *, paid, maximum_usd):
-        cached = next((r for r in reversed(self.rows) if r["status"] in {"success", "received"} and r["request_hash"] == request.key), None)
+        resolved_at = max((r["time_ns"] for r in self.rows if r["status"] == "access_resolved"), default=0)
+        cached = next((r for r in reversed(self.rows) if r["status"] in {"success", "received"}
+                       and r["request_hash"] == request.key
+                       and not (r.get("access_blocked") and r["time_ns"] < resolved_at)), None)
         if cached:
             self.append({"status": "reused", "request_hash": request.key,
                          "original_attempt_id": cached["attempt_id"], "billed_usd": "0",
