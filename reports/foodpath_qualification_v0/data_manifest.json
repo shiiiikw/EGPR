@@ -1,0 +1,17 @@
+{
+  "input_sha256": {
+    "data/benchmark/filtered_resources_raw.csv": "153006a0daa3cdd3c50d65178e5e6f6eb70cd32025f08fd07131117624845330",
+    "data/benchmark/filtered_resources_tagged.csv": "98201de77f87ebec99b29cd0ed3a4079993bc62eadc39560e7e44499e60d0711",
+    "data/indiana211/README.json": "c62fa8f25bb53a7d21eb4f307c90b2abea7ba1b976d22caac6d5837f2138fa3c",
+    "eval/llm_user.py": "0060e817dc28f98199a10d36b4dfc49857a862679102a8876d4dff5cdae8a276",
+    "eval/spec_generation.py": "2ddd106de9607c07f57261307e533db83b770f35b1cc62d19ad7b498dedbe108",
+    "private/generated_specs.json": "8357c83facf86ebde7bed41dd1af0d3d5f4ef80570a5dfe681d11a324bdeb060",
+    "private/resource_groups.json": "de17fbfb1fb13bf93637e0e9a0228064f19e66027bc355914932ea73d6275173",
+    "tools/indiana211.py": "759e83ed4686e94cb1206512612cb4dff3d82644a632c285aa301c4514fa9ed1",
+    "tools/indiana211_models.py": "6bc795f37bf51beabb49320c57f61f7c8a80e8f4d96764ba513033fd1f3ee9fd"
+  },
+  "license_status": "No top-level LICENSE found in pinned author tree; no upstream code/data copied into this repository.",
+  "raw_source_redistributed": false,
+  "script_sha256": "030c078cf75e7e802f969857563d11ad5ed9225fd1c3ea0d72a0e0b168644a15",
+  "upstream_commit": "7f6b5ec955bcb4b3ba861fcd86f80269b61f692a"
+}

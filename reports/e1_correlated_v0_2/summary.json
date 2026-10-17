@@ -1,0 +1,115 @@
+{
+  "B3_P": "algorithmically identical in v0; no independent-method advantage established",
+  "api_calls": 0,
+  "audit": {
+    "action_disagreements": 0,
+    "api_calls": 0,
+    "bound_violations": 0,
+    "certificates": 9939,
+    "false_pruning": 0,
+    "incremental_divergences": 0,
+    "max_action_regret": 0.0,
+    "passed": true,
+    "query_bounds": 3780,
+    "states": 540
+  },
+  "comparisons": {
+    "P/A1": {
+      "branch_evaluations": 1.0,
+      "constraint_checks": 0.1803830031823471,
+      "cpu_seconds": 1.2494846368480232,
+      "plan_evaluations": 0.15461566903578325,
+      "wall_seconds": 1.2347220262667535
+    },
+    "P/B1": {
+      "branch_evaluations": 0.44206349206349205,
+      "constraint_checks": 0.11200568955371475,
+      "cpu_seconds": 0.9764464935050435,
+      "plan_evaluations": 0.11007765542052385,
+      "wall_seconds": 0.9762939313129883
+    },
+    "P/B2": {
+      "branch_evaluations": 0.44206349206349205,
+      "constraint_checks": 0.7059291486758582,
+      "cpu_seconds": 0.7516594195054588,
+      "plan_evaluations": 0.8185970636215334,
+      "wall_seconds": 0.752259973548428
+    },
+    "P/B3": {
+      "branch_evaluations": 1.0,
+      "constraint_checks": 1.0,
+      "cpu_seconds": 0.9987621073661822,
+      "plan_evaluations": 1.0,
+      "wall_seconds": 0.9807112320099363
+    }
+  },
+  "construction_seconds": 0.38656486151739955,
+  "elapsed_seconds_including_construction_audit_and_io": 42.71915600495413,
+  "instances": 180,
+  "oracle_audit_seconds": 7.385892170947045,
+  "paid_usd": 0,
+  "scope": "controlled finite-state E1 and same-state replay; not FoodPath MAS effectiveness",
+  "states": 540,
+  "totals": {
+    "A1": {
+      "bound_plan_visits": 95684,
+      "branch_evaluations": 5013,
+      "cache_hits": 0,
+      "certificates": 3313,
+      "constraint_checks": 713310,
+      "cpu_seconds": 4.656558177999999,
+      "decisions": 540,
+      "peak_traced_bytes": null,
+      "plan_evaluations": 48682,
+      "wall_seconds": 4.919922539032996
+    },
+    "B1": {
+      "bound_plan_visits": 0,
+      "branch_evaluations": 11340,
+      "cache_hits": 0,
+      "certificates": 0,
+      "constraint_checks": 1148772,
+      "cpu_seconds": 5.958644885000009,
+      "decisions": 540,
+      "peak_traced_bytes": null,
+      "plan_evaluations": 68379,
+      "wall_seconds": 6.222241613548249
+    },
+    "B2": {
+      "bound_plan_visits": 0,
+      "branch_evaluations": 11340,
+      "cache_hits": 642894,
+      "certificates": 0,
+      "constraint_checks": 182269,
+      "cpu_seconds": 7.740603993000007,
+      "decisions": 540,
+      "peak_traced_bytes": null,
+      "plan_evaluations": 9195,
+      "wall_seconds": 8.07531563565135
+    },
+    "B3": {
+      "bound_plan_visits": 95684,
+      "branch_evaluations": 5013,
+      "cache_hits": 392548,
+      "certificates": 3313,
+      "constraint_checks": 128669,
+      "cpu_seconds": 5.8255092589999755,
+      "decisions": 540,
+      "peak_traced_bytes": null,
+      "plan_evaluations": 7527,
+      "wall_seconds": 6.194215512368828
+    },
+    "P": {
+      "bound_plan_visits": 95684,
+      "branch_evaluations": 5013,
+      "cache_hits": 392548,
+      "certificates": 3313,
+      "constraint_checks": 128669,
+      "cpu_seconds": 5.818297904000022,
+      "decisions": 540,
+      "peak_traced_bytes": null,
+      "plan_evaluations": 7527,
+      "wall_seconds": 6.074736726470292
+    }
+  }
+}

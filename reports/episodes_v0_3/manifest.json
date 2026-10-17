@@ -1,0 +1,280 @@
+{
+  "source_hashes": {
+    "configs/offline_v0.json": "e7eac484eec65b64927878203b3688794ebf9beb6bbebd17d771023beb941872",
+    "docs/OFFLINE_PROTOCOL.md": "143cfde60ded2a7c3334406493a24d65f796e5a0a000eed94611a64668c746ad",
+    "scripts/qualify_foodpath.py": "030c078cf75e7e802f969857563d11ad5ed9225fd1c3ea0d72a0e0b168644a15",
+    "scripts/run_episodes.py": "1e066e805ba4f26c6bbd682eaf23f0bf9409307c2d7cb63445ebdf6dcd883912",
+    "scripts/run_offline.py": "9a42559f5adb421bcf4c3d1d67a5ba98c78cc18bc3ed9cd05ff628ebfea71c24",
+    "scripts/run_role_pilot.py": "0299f76d0d6e6c548120ac5ecb2b5524892080e7420253d570784a98c4e654c5",
+    "src/egpr/__init__.py": "2ba03b98f0d9c8e5809270d52c3c66563523ee88f1f7d4912caaa48bcc65a2ef",
+    "src/egpr/api.py": "b4d77c14dacc710298e8096912a3f4db38c55c9de873169c73963cbcb89d06a7",
+    "src/egpr/episodes.py": "024b723f55e0b00d84086f3bc2cc50514914edbf29330cc38f99d45f0ccace48",
+    "src/egpr/fixtures.py": "e9e15452843d193e56fc7a88e722f721c401f617edd3f6de2a5b408fd6ca5566",
+    "src/egpr/ledger.py": "feefc9e7305611c4ac1776eaf343c578d4bd6698ac3d34fec84735a7d79e89c1",
+    "src/egpr/mas.py": "5faa5dac6b4d196fe0a11caeedaa948779c510db05498a6c8dcfdba39383cdc3",
+    "src/egpr/schema.py": "44ec5cb3e3e2e3ae24e85c589ef616804c55e41bbc255dedc4ee28c9229a9cf3",
+    "src/egpr/solver.py": "c170b6de4da11e20dae4bc74910852b5d671c362ce1267bae8801fe8d3550a4d",
+    "tests/test_api.py": "ce3d88337d12cd30162fcaa0590bb3358a7dc79b8d536ba1c94c1e86d0a9cb77",
+    "tests/test_core.py": "090c701862f362d550c91c4ebab14053baaa76418d8904687c6c990e0f6a9655",
+    "tests/test_episodes.py": "7222fe1ce0bd9ea5e7a96708275d52fd708f9a7be451ec54b904442be1c4727b",
+    "tests/test_ledger.py": "66662793c8f063fdb5c7613247993936b3181aada7d9c1978f5b5632bb2a7e20",
+    "tests/test_mas.py": "3e4aa18e8dd2e04612f11889302eaa1a37b91d9e042d388ac6ca9d8d00de3ac2",
+    "uv.lock": "a2516e3d6b35da7313aca0ffd861c325e662e9df70daa9a65134063905a9e553"
+  },
+  "grid": [
+    [
+      8,
+      4,
+      0,
+      13
+    ],
+    [
+      8,
+      4,
+      0,
+      37
+    ],
+    [
+      8,
+      4,
+      0,
+      73
+    ],
+    [
+      8,
+      4,
+      0,
+      101
+    ],
+    [
+      8,
+      4,
+      0,
+      137
+    ],
+    [
+      8,
+      4,
+      0.75,
+      13
+    ],
+    [
+      8,
+      4,
+      0.75,
+      37
+    ],
+    [
+      8,
+      4,
+      0.75,
+      73
+    ],
+    [
+      8,
+      4,
+      0.75,
+      101
+    ],
+    [
+      8,
+      4,
+      0.75,
+      137
+    ],
+    [
+      8,
+      8,
+      0,
+      13
+    ],
+    [
+      8,
+      8,
+      0,
+      37
+    ],
+    [
+      8,
+      8,
+      0,
+      73
+    ],
+    [
+      8,
+      8,
+      0,
+      101
+    ],
+    [
+      8,
+      8,
+      0,
+      137
+    ],
+    [
+      8,
+      8,
+      0.75,
+      13
+    ],
+    [
+      8,
+      8,
+      0.75,
+      37
+    ],
+    [
+      8,
+      8,
+      0.75,
+      73
+    ],
+    [
+      8,
+      8,
+      0.75,
+      101
+    ],
+    [
+      8,
+      8,
+      0.75,
+      137
+    ],
+    [
+      32,
+      4,
+      0,
+      13
+    ],
+    [
+      32,
+      4,
+      0,
+      37
+    ],
+    [
+      32,
+      4,
+      0,
+      73
+    ],
+    [
+      32,
+      4,
+      0,
+      101
+    ],
+    [
+      32,
+      4,
+      0,
+      137
+    ],
+    [
+      32,
+      4,
+      0.75,
+      13
+    ],
+    [
+      32,
+      4,
+      0.75,
+      37
+    ],
+    [
+      32,
+      4,
+      0.75,
+      73
+    ],
+    [
+      32,
+      4,
+      0.75,
+      101
+    ],
+    [
+      32,
+      4,
+      0.75,
+      137
+    ],
+    [
+      32,
+      8,
+      0,
+      13
+    ],
+    [
+      32,
+      8,
+      0,
+      37
+    ],
+    [
+      32,
+      8,
+      0,
+      73
+    ],
+    [
+      32,
+      8,
+      0,
+      101
+    ],
+    [
+      32,
+      8,
+      0,
+      137
+    ],
+    [
+      32,
+      8,
+      0.75,
+      13
+    ],
+    [
+      32,
+      8,
+      0.75,
+      37
+    ],
+    [
+      32,
+      8,
+      0.75,
+      73
+    ],
+    [
+      32,
+      8,
+      0.75,
+      101
+    ],
+    [
+      32,
+      8,
+      0.75,
+      137
+    ]
+  ],
+  "budget": {
+    "steps": 16,
+    "information_actions": 8,
+    "counterfactual_branches": 200,
+    "search_actions": 1
+  },
+  "variants": [
+    "truthful",
+    "one_unresolved",
+    "search_recovery"
+  ],
+  "scope": "controlled sequential integration audit, not FoodPath or live MAS quality",
+  "api_calls": 0,
+  "paid_usd": 0
+}

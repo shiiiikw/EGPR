@@ -1,0 +1,108 @@
+{
+  "commit": "4c65d06dcebb37bca3a0f6b27ec6b74a56f06d00",
+  "source_hashes": {
+    "configs/api_campaign.json": "b5862e31fedfafcc3175d553adffb292c0f3a85fdba5f5ed60b7cf4bfdd0bb17",
+    "configs/models.json": "5894bf3514823063c0b1f4b11e009cd286d661e789461c852e1cbb1a763c0583",
+    "configs/offline_v0.json": "e7eac484eec65b64927878203b3688794ebf9beb6bbebd17d771023beb941872",
+    "scripts/run_role_pilot.py": "0299f76d0d6e6c548120ac5ecb2b5524892080e7420253d570784a98c4e654c5",
+    "src/egpr/__init__.py": "2ba03b98f0d9c8e5809270d52c3c66563523ee88f1f7d4912caaa48bcc65a2ef",
+    "src/egpr/api.py": "b4d77c14dacc710298e8096912a3f4db38c55c9de873169c73963cbcb89d06a7",
+    "src/egpr/episodes.py": "024b723f55e0b00d84086f3bc2cc50514914edbf29330cc38f99d45f0ccace48",
+    "src/egpr/fixtures.py": "e9e15452843d193e56fc7a88e722f721c401f617edd3f6de2a5b408fd6ca5566",
+    "src/egpr/ledger.py": "feefc9e7305611c4ac1776eaf343c578d4bd6698ac3d34fec84735a7d79e89c1",
+    "src/egpr/mas.py": "5faa5dac6b4d196fe0a11caeedaa948779c510db05498a6c8dcfdba39383cdc3",
+    "src/egpr/schema.py": "44ec5cb3e3e2e3ae24e85c589ef616804c55e41bbc255dedc4ee28c9229a9cf3",
+    "src/egpr/solver.py": "c170b6de4da11e20dae4bc74910852b5d671c362ce1267bae8801fe8d3550a4d"
+  },
+  "models": {
+    "gpt-6-luna": {
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "version_kind": "provider_alias",
+      "context_tokens": 1050000,
+      "generation": {
+        "max_completion_tokens": 768,
+        "reasoning_effort": "none",
+        "service_tier": "default"
+      },
+      "tariff": {
+        "input_per_million": "0.10",
+        "output_per_million": "0.50",
+        "cached_input_per_million": "0.01",
+        "cache_write_per_million": "0.125",
+        "long_context_threshold": 272000,
+        "long_input_multiplier": "2",
+        "long_output_multiplier": "1.5",
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+        "checked_at": "2026-10-17"
+      }
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "version_kind": "dated_snapshot",
+      "context_tokens": 1047576,
+      "generation": {
+        "max_completion_tokens": 768,
+        "temperature": 0,
+        "service_tier": "default"
+      },
+      "tariff": {
+        "input_per_million": "0.40",
+        "output_per_million": "1.60",
+        "cached_input_per_million": "0.10",
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+        "checked_at": "2026-10-17"
+      }
+    }
+  },
+  "campaign": {
+    "campaign_id": "egpr-2026-10-17",
+    "authorized_total_usd": "200",
+    "initial_development_ceiling_usd": "10",
+    "authorization": "User explicitly approved US$200 in chat; first development phase capped at US$10.",
+    "ledger_path": "results/api_campaign/calls.jsonl",
+    "default_paid": false,
+    "currency": "USD",
+    "accounting": "Conservative usage-based estimates and unresolved reservations; actual provider bills recorded separately.",
+    "allocation_usd": {
+      "development": 10,
+      "two_primary_models_full_controls": 80,
+      "additional_family_breadth": 60,
+      "robustness_and_failure_audits": 30,
+      "unallocated_reserve": 20
+    },
+    "cached_calls_are_independent_replicates": false,
+    "automatic_model_fallback": false,
+    "automatic_network_retries": 0,
+    "selected_primary_models": [
+      "gpt-6-luna",
+      "gpt-4.1-mini-2025-04-14"
+    ],
+    "primary_selection_note": "Development candidates with listed access; replace deprecated GPT-4.1 with a current second family when that API becomes available. This is not yet a frozen paper model roster.",
+    "breadth_candidates": [
+      "gpt-6.1-sol",
+      "Qwen/Qwen3.5-9B",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "MiniMaxAI/MiniMax-M3",
+      "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+      "openai/gpt-oss-120b"
+    ],
+    "provider_status": {
+      "openai": "Model-list GET succeeded; paid inference availability not established by model listing.",
+      "together": "Metadata GET returned HTTP 403; keep disabled until access is resolved. No automatic retry."
+    }
+  },
+  "replicate_id": "development-0",
+  "cases": [
+    "missing_evidence",
+    "supported",
+    "wrong_subject",
+    "source_conflict",
+    "explicit_negative",
+    "missing_cross_service_evidence",
+    "complete_cross_service",
+    "same_source_correction"
+  ],
+  "scope": "eight deterministic synthetic development fixtures; no population inference"
+}

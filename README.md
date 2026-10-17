@@ -3,7 +3,8 @@
 EGPR investigates whether conservative information-value screening and incremental
 plan revision reduce computation while preserving evidence-supported complete
 plans. This repository now contains an executable **finite-state first stage**.
-It does not yet establish a novel method advantage or a full FoodPath MAS result.
+It also contains a guarded API role pipeline and a frozen-response model VOI
+pilot. It does not yet establish a novel method advantage or a full FoodPath result.
 
 The user requested that code live in `shiiiikw/EGPR` and start with a simplified
 implementation. This supersedes the destination and full-version-first wording
@@ -33,21 +34,42 @@ or third-party dataset. Runtime code uses the Python standard library.
 - Rational interval witnesses, strict-dominance certificates and safe fallback.
 - Cache invalidation and revision reports, including indirect belief changes.
 - Small multi-step reference for complementarity tests.
-- Full-request hashing, append-only accounting, interrupted reservations and
-  disabled-by-default paid calls. The ledger has no network backend.
+- Bounded sequential Ask/Verify, public candidate replacement, revision and final
+  guard; a separate controlled environment holds simulator truth.
+- Full-request caching, append-only accounting, interrupted reservations, process
+  locking, and explicit recovery after externally resolved API access failures.
+- OpenAI/Together-compatible text API adapter; actual Planner, Reviewer and
+  Coordinator calls with bounded guard recovery. Together access is not yet working.
+- A fallible model terminal evaluator with zero lower bounds, structural upper
+  bounds and model-specific certificates. Its guarantee is conditional on a
+  frozen exact-request response mapping.
 
 The implementation is limited to fixed candidate pools, Boolean conditions and
 one-field Ask/Verify. Dynamic pool replacement invalidates cached certificates;
-search itself, live model roles and real user outcomes are not implemented by
-this finite solver. Conditional/unresolved outputs do not count as supported
-completion. All fixture utilities and observation models are declared assumptions.
+live service search and real user outcomes are not implemented by this finite
+solver. Controlled search reveals a predeclared public candidate batch.
+Conditional/unresolved outputs do not count as supported completion. All fixture
+utilities and observation models are declared assumptions.
 
 ## Evidence and next steps
 
-E0 correctness tests and the development smoke are runnable now. Versioned run
-artifacts and reports will record actual results; historical FoodPath results are
-not EGPR results. Full-system extraction, candidate construction, search/recovery,
-B0/B4, two-model evaluation and cross-domain tests remain separate later gates.
+See [the current research report](docs/PROGRESS_2026_10_17.md),
+[API budget and breadth protocol](docs/API_PROTOCOL.md), and
+[model VOI correctness/accounting](docs/MODEL_VOI_PROTOCOL.md).
+The full 180-instance grid and correlated robustness variant have passed their
+audits. Full-system extraction, real-source candidate construction, B0/B4,
+cross-family effectiveness and cross-domain tests remain later gates.
 
-No paid calls are enabled. The public repository does not contain the private
-FoodPath project, raw service data, old prompts, API responses or credentials.
+The user authorized a US$200 campaign with a US$10 initial development ceiling.
+Paid execution still requires `--allow-paid`; default runs reuse cache only.
+The public repository does not contain the private FoodPath project, raw service
+data, old prompts, API responses or credentials.
+
+```sh
+uv run python scripts/run_episodes.py --output results/my-episodes
+uv run python scripts/run_role_pilot.py --allow-paid --output results/my-role-pilot
+uv run python scripts/run_model_voi.py --allow-paid --cases 2 --output results/my-model-voi
+```
+
+Credentials come from `OPENAI_API_KEY` / `TOGETHER_API_KEY` or an explicitly supplied
+local assignment file. All API stages share the campaign ledger in `results/`.

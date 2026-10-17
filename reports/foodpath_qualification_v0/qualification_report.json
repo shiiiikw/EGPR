@@ -1,0 +1,51 @@
+{
+  "all_cases": 1024,
+  "all_initial_candidate_exposure_groups": 1,
+  "api_calls": 0,
+  "composite_cases": 44,
+  "decision": "Keep the cohort for native matching and adapter development; do not claim an operational complete-plan E3 result or 45 independent provider groups.",
+  "development_groups": 9,
+  "endpoint_status": {
+    "EGPR_interactive_benefit": "not evaluated",
+    "cross_service_travel_time": "not labeled",
+    "current_inventory_or_actual_eligibility": "not labeled",
+    "native_independent_tag_matching": "supported within author semantics",
+    "user_burden_or_food_receipt": "not labeled"
+  },
+  "equal_field_multineed_cases": 44,
+  "food_cases": 59,
+  "food_source_resources": 45,
+  "historical_resource_groups_reproduced": 45,
+  "multi_final_native_service_combination_cases": 0,
+  "multi_initial_service_combination_cases": 59,
+  "native_need_fields": [
+    "available_documents",
+    "eligibility",
+    "ground_truth_resource_id",
+    "ground_truth_resource_name",
+    "intake_methods",
+    "location",
+    "need_id",
+    "preferred",
+    "schedule",
+    "service_categories"
+  ],
+  "needs": 103,
+  "paid_usd": 0,
+  "provider_document_groups": 43,
+  "qualified_joint_operational_plan_cases": 0,
+  "reserved_groups": 34,
+  "scope": "static qualification; no policy, LLM or live-provider experiment",
+  "source_hashes_matched": {
+    "data/benchmark/filtered_resources_raw.csv": true,
+    "data/benchmark/filtered_resources_tagged.csv": true,
+    "data/indiana211/README.json": true,
+    "eval/llm_user.py": true,
+    "eval/spec_generation.py": true,
+    "tools/indiana211.py": true,
+    "tools/indiana211_models.py": true
+  },
+  "source_snapshot": "2026-05-05",
+  "verified_cross_need_shared_scope_cases": 0,
+  "within_need_candidate_scope_cases": 59
+}

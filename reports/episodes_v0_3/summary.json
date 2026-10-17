@@ -1,0 +1,56 @@
+{
+  "case_variants": 120,
+  "totals": {
+    "B1": {
+      "episodes": 120,
+      "supported_completion": 120,
+      "truth_correct": 120,
+      "information_actions": 234,
+      "search_actions": 40,
+      "counterfactual_branches": 5889,
+      "unsupported_commits": 0
+    },
+    "B2": {
+      "episodes": 120,
+      "supported_completion": 120,
+      "truth_correct": 120,
+      "information_actions": 234,
+      "search_actions": 40,
+      "counterfactual_branches": 5889,
+      "unsupported_commits": 0
+    },
+    "B3": {
+      "episodes": 120,
+      "supported_completion": 120,
+      "truth_correct": 120,
+      "information_actions": 234,
+      "search_actions": 40,
+      "counterfactual_branches": 0,
+      "unsupported_commits": 0
+    },
+    "A1": {
+      "episodes": 120,
+      "supported_completion": 120,
+      "truth_correct": 120,
+      "information_actions": 234,
+      "search_actions": 40,
+      "counterfactual_branches": 0,
+      "unsupported_commits": 0
+    },
+    "P": {
+      "episodes": 120,
+      "supported_completion": 120,
+      "truth_correct": 120,
+      "information_actions": 234,
+      "search_actions": 40,
+      "counterfactual_branches": 0,
+      "unsupported_commits": 0
+    }
+  },
+  "policy_outcome_disagreements": 0,
+  "branch_ratio_P_B2": 0.0,
+  "scope": "controlled sequential integration audit, not FoodPath or live MAS quality",
+  "api_calls": 0,
+  "paid_usd": 0,
+  "quality_note": "Generator includes a publicly supported fallback; completion rate is not an effectiveness claim."
+}
