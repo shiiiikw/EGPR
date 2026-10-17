@@ -55,6 +55,20 @@ failures while remaining inconclusive about small quality losses. Repeated seeds
 or cached responses do not increase the number of independent source groups.
 Current P equals generic B3; model breadth does not establish algorithm novelty.
 
+After the seven-model VOI and two-family sequential gates, extend the original
+eight diagnostic role cases to all seven original model configurations using
+the existing `development-0` mapping. Reuse completed cases, keep all failures,
+and report the full case matrix after the common guard. Do not count the two
+Qwen sensitivity settings as additional base models. These eight fixed cases
+test scoped evidence, conflict, explicit negative requirements, source correction
+and cross-service obligations; they are not a statistical effectiveness sample.
+
+This extension completed 55/56 model/case pairs successfully. MiniMax abstained
+on the complete cross-service case after adding an undeclared eligibility
+requirement. All other configurations passed the eight fixtures; no case was
+replaced or resampled. The full cached replay reused 168 responses with zero
+new attempts and identical case traces. See the [complete matrix](../reports/role_pilot_analysis_v0_11/table.md).
+
 Seven configurations have completed the four-state development comparison:
 GPT-6 Luna, dated GPT-4.1 Mini, GPT-6.1 Sol, Qwen3.5-9B, MiniMax M3,
 DeepSeek V4 Pro 0813 and GPT-OSS 120B. GPT-4.1 Mini is deprecated in current

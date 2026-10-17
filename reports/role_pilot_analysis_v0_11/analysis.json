@@ -1,0 +1,575 @@
+{
+  "scope": "Fixed synthetic evidence fixtures after the common guard and bounded recovery; not raw model accuracy or operational effectiveness",
+  "models": {
+    "gpt-6-luna": {
+      "cases": 8,
+      "guarded_correct": 8,
+      "response_error": 0,
+      "initial_guard_rejected": 0,
+      "final_guard_rejected": 0,
+      "role_requests": 24
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "cases": 8,
+      "guarded_correct": 8,
+      "response_error": 0,
+      "initial_guard_rejected": 0,
+      "final_guard_rejected": 0,
+      "role_requests": 24
+    },
+    "gpt-6.1-sol": {
+      "cases": 8,
+      "guarded_correct": 8,
+      "response_error": 0,
+      "initial_guard_rejected": 0,
+      "final_guard_rejected": 0,
+      "role_requests": 24
+    },
+    "Qwen/Qwen3.5-9B": {
+      "cases": 8,
+      "guarded_correct": 8,
+      "response_error": 0,
+      "initial_guard_rejected": 0,
+      "final_guard_rejected": 0,
+      "role_requests": 24
+    },
+    "MiniMaxAI/MiniMax-M3": {
+      "cases": 8,
+      "guarded_correct": 7,
+      "response_error": 0,
+      "initial_guard_rejected": 0,
+      "final_guard_rejected": 0,
+      "role_requests": 24
+    },
+    "deepseek-ai/DeepSeek-V4-Pro-0813": {
+      "cases": 8,
+      "guarded_correct": 8,
+      "response_error": 0,
+      "initial_guard_rejected": 0,
+      "final_guard_rejected": 0,
+      "role_requests": 24
+    },
+    "openai/gpt-oss-120b": {
+      "cases": 8,
+      "guarded_correct": 8,
+      "response_error": 0,
+      "initial_guard_rejected": 0,
+      "final_guard_rejected": 0,
+      "role_requests": 24
+    }
+  },
+  "cases": [
+    {
+      "model": "gpt-6-luna",
+      "case": "missing_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "supported",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "wrong_subject",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "source_conflict",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "explicit_negative",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "missing_cross_service_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "complete_cross_service",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "same_source_correction",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "case": "missing_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "case": "supported",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "case": "wrong_subject",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "case": "source_conflict",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "case": "explicit_negative",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "case": "missing_cross_service_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "case": "complete_cross_service",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "case": "same_source_correction",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "case": "missing_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "case": "supported",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "case": "wrong_subject",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "case": "source_conflict",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "case": "explicit_negative",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "case": "missing_cross_service_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "case": "complete_cross_service",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "case": "same_source_correction",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "Qwen/Qwen3.5-9B",
+      "case": "missing_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "Qwen/Qwen3.5-9B",
+      "case": "supported",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "Qwen/Qwen3.5-9B",
+      "case": "wrong_subject",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "Qwen/Qwen3.5-9B",
+      "case": "source_conflict",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "Qwen/Qwen3.5-9B",
+      "case": "explicit_negative",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "Qwen/Qwen3.5-9B",
+      "case": "missing_cross_service_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "Qwen/Qwen3.5-9B",
+      "case": "complete_cross_service",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "Qwen/Qwen3.5-9B",
+      "case": "same_source_correction",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "MiniMaxAI/MiniMax-M3",
+      "case": "missing_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "MiniMaxAI/MiniMax-M3",
+      "case": "supported",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "MiniMaxAI/MiniMax-M3",
+      "case": "wrong_subject",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "MiniMaxAI/MiniMax-M3",
+      "case": "source_conflict",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "MiniMaxAI/MiniMax-M3",
+      "case": "explicit_negative",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "MiniMaxAI/MiniMax-M3",
+      "case": "missing_cross_service_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "MiniMaxAI/MiniMax-M3",
+      "case": "complete_cross_service",
+      "guarded_correct": false,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "MiniMaxAI/MiniMax-M3",
+      "case": "same_source_correction",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "case": "missing_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "case": "supported",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "case": "wrong_subject",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "case": "source_conflict",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "case": "explicit_negative",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "case": "missing_cross_service_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "case": "complete_cross_service",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "case": "same_source_correction",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "case": "missing_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "case": "supported",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "case": "wrong_subject",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "case": "source_conflict",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "case": "explicit_negative",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "case": "missing_cross_service_evidence",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "case": "complete_cross_service",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "case": "same_source_correction",
+      "guarded_correct": true,
+      "response_error": false,
+      "initial_guard_rejected": false,
+      "final_guard_rejected": false,
+      "role_requests": 3
+    }
+  ],
+  "source_run": "role_pilot_all_v0_11",
+  "replicate_id": "development-0",
+  "input_sha256": {
+    "manifest.json": "9ed0694440cc841bcba3e2d065054a8bd6e8909288f19db977af28f2efda26f1",
+    "summary.json": "12825013c5eed1184face67efd4d98b33f931846cbf4ca925dcc840d1e4e93a5",
+    "traces.jsonl": "3f589f11fedcb348005037f71b323900d62b7b52973e71580dcb9b2484bc0808"
+  },
+  "failure_note": "A guarded correct abstention can follow a rejected unsupported proposal; guard rejection counts are retained."
+}

@@ -72,7 +72,23 @@ candidate construction, B0/B4, cross-family effectiveness and cross-domain tests
 remain later gates. See the [baseline mapping](docs/BASELINE_SOURCE_AUDIT.md) and
 [cross-domain input qualification](docs/CROSS_DOMAIN_QUALIFICATION.md).
 
+The [two-family sequential integration](reports/model_episodes_analysis_v0_11/table.md)
+also runs the actual model at every planning and finalization step. Twenty
+controlled method trajectories agree on actions and supported delivery; P uses
+33 requests over two cases versus B2's 152 (Luna) or 150 (DeepSeek). The fixture
+fallback and tiny development bank prevent an operational effectiveness claim.
+
+The [eight-case evidence diagnostic](reports/role_pilot_analysis_v0_11/table.md)
+now covers all seven original configurations: 55/56 model/case pairs pass.
+MiniMax incorrectly abstains on the complete cross-service fixture by inventing
+an extra eligibility requirement. The full cache replay reproduces that failure
+with zero new calls. Qwen's [output sensitivity](reports/qwen_output_comparison_v0_11/table.md)
+also retains both negative variants; neither replaces the original configuration.
+
 The user authorized a US$200 campaign with a US$10 initial development ceiling.
+The [latest checkpoint](reports/campaign_checkpoint_v0_11/campaign_checkpoint.json)
+records US$1.150171260 in usage estimates plus US$0.51079696 in unresolved
+reservations (US$1.660968220 total occupancy); actual billing is not reconciled.
 Paid execution still requires `--allow-paid`; default runs reuse cache only.
 The public repository does not contain the private FoodPath project, raw service
 data, old prompts, API responses or credentials.

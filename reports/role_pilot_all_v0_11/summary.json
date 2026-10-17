@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "completed_cases": 56,
+  "correct_cases": 55,
+  "new_network_attempts": 96,
+  "local_cache_reuses": 72,
+  "campaign_occupancy_usd": "1.660968220",
+  "actual_billed_usd": null,
+  "billing_note": "Usage estimate plus unresolved reservations; no invoice received",
+  "per_model": {
+    "gpt-6-luna": {
+      "completed": 8,
+      "correct": 8
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "completed": 8,
+      "correct": 8
+    },
+    "gpt-6.1-sol": {
+      "completed": 8,
+      "correct": 8
+    },
+    "Qwen/Qwen3.5-9B": {
+      "completed": 8,
+      "correct": 8
+    },
+    "MiniMaxAI/MiniMax-M3": {
+      "completed": 8,
+      "correct": 7
+    },
+    "deepseek-ai/DeepSeek-V4-Pro-0813": {
+      "completed": 8,
+      "correct": 8
+    },
+    "openai/gpt-oss-120b": {
+      "completed": 8,
+      "correct": 8
+    }
+  }
+}

@@ -34,3 +34,10 @@ to every included model and policy; the original table will not be rewritten.
 The already selected Luna/DeepSeek sequential integration retains the original
 output style and can reuse its exact prior requests. This targeted diagnostic
 does not change that selection or its declared states.
+
+The completed diagnostic had zero response errors but 46/52 no-delivery terminal
+outcomes, versus 29/52 in the original 768-token setting and 31/52 at 1,536.
+It is therefore **not adopted as the default**. Shorter valid JSON did not imply
+better planning on this bank. All configurations retain valid within-setting
+pruning audits; that property does not establish cross-setting task quality.
+See the [three-setting results](../reports/qwen_output_comparison_v0_11/table.md).

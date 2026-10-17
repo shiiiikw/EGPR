@@ -56,3 +56,13 @@ uv run python scripts/run_model_episodes.py --allow-paid --cases 2 \
 uv run python scripts/run_model_episodes.py --cases 2 \
   --output results/model-episodes-replay
 ```
+
+The initial gate is complete: all 20 controlled method trajectories delivered
+supported plans, with no P/B2 or P/B3 trajectory disagreements or budget
+violations. Across the two cases, each model/policy used one user information
+action and two source verifications. Luna's B2/P request totals were 152/33 and
+DeepSeek's 150/33; all role, recovery and finalization requests are included.
+The replay reproduced all group results with 886 cache reuses and zero new
+network attempts. See the [full paired table](../reports/model_episodes_analysis_v0_11/table.md)
+and [verification](../reports/model_episodes_v0_11_replay/source_verification.json).
+These findings keep the development-only interpretation and B3 equality above.

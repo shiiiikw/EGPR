@@ -1,0 +1,38 @@
+{
+  "scope": "unique requests used by complete B2 development evaluations; not online task success rates",
+  "source_runs": [
+    {
+      "run": "model_voi_qwen_concise_v0_11",
+      "trace_sha256": "051c8961d83609df8362e8b16375a4bbd324126d59d675c4a8962f4c19831095"
+    }
+  ],
+  "ledger_sha256": "83646d11a9723f428e6e701e8be1401a7a02b167095f24e4f225f0e74ba1a45a",
+  "models": {
+    "Qwen/Qwen3.5-9B-concise-v1": {
+      "unique_B2_requests": 156,
+      "configured_output_cap": 768,
+      "finish_reasons": {
+        "stop": 156
+      },
+      "completion_parse_outcomes": {
+        "parsed_object": 156
+      },
+      "reported_tokens": {
+        "prompt_tokens": 135834,
+        "prompt_tokens_receipts": 156,
+        "completion_tokens": 5299,
+        "completion_tokens_receipts": 156,
+        "reasoning_tokens_reported": 0,
+        "reasoning_token_receipts": 156
+      },
+      "maximum_reported_completion_tokens": 57,
+      "terminal_counts": {
+        "terminal_evaluations": 52,
+        "model_response_errors": 0,
+        "no_delivery": 46
+      }
+    }
+  },
+  "raw_responses_published": false,
+  "parser_note": "A parsed object is not necessarily a valid role output or supported plan; terminal errors and no-delivery are separate."
+}

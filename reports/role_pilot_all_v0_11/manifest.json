@@ -1,0 +1,223 @@
+{
+  "commit": "61dd0452a0b48d44c5a50b79da250604d53e57cb",
+  "source_hashes": {
+    "configs/api_campaign.json": "9d1849d48694c7b98968c106a941478103712628721064b777432c94944fb312",
+    "configs/models.json": "776260b2a7f91c08b7a2ab1a6047acf31dc0304a8f011f03ae5db1db16a4cb0d",
+    "configs/offline_v0.json": "e7eac484eec65b64927878203b3688794ebf9beb6bbebd17d771023beb941872",
+    "scripts/run_role_pilot.py": "25bc87fe821406bae206b7d6df8aa874af4d46d3fb4576fb7201e8e5a3539258",
+    "src/egpr/__init__.py": "2ba03b98f0d9c8e5809270d52c3c66563523ee88f1f7d4912caaa48bcc65a2ef",
+    "src/egpr/api.py": "52d6b4ab690915d01fd3055924e407c563021a943cafcd2a6fe92ef5cb4543ce",
+    "src/egpr/episodes.py": "44904a23c2c3fefb2901197e1752bff93ef225f327a3fa9f4f7274c3ea8db36a",
+    "src/egpr/fixtures.py": "e9e15452843d193e56fc7a88e722f721c401f617edd3f6de2a5b408fd6ca5566",
+    "src/egpr/ledger.py": "243e8a3c26e746ac611fb788e9d0a7d96ee5698b1a3d6313276aff26c2bbfede",
+    "src/egpr/mas.py": "7cc4fe5d99c17449352c43227b33ddc8cb51de2072faf4f46e72159fe66ded5a",
+    "src/egpr/model_voi.py": "682a6685a194a21a24653b34688923481d2d4d39d90231e0c9d720027a181546",
+    "src/egpr/native_adapter.py": "ba66a9a6d729614463fa7555b4f39dac7afaf211741135a83d717fc6477357c9",
+    "src/egpr/native_user.py": "66ea25c85b8e10cd4584e28f0c032575f7d6f95de4d74141f6568c620d91da4c",
+    "src/egpr/providers.py": "f43ebb0d67ac4882b772c5a78157565720c6f5bf6857080e624ffc3696fc07c7",
+    "src/egpr/schema.py": "44ec5cb3e3e2e3ae24e85c589ef616804c55e41bbc255dedc4ee28c9229a9cf3",
+    "src/egpr/solver.py": "b6867fb16f6bdcd921b4564a14be1fd2c128923ab58c637fd835e7a5c9086cfd"
+  },
+  "models": {
+    "gpt-6-luna": {
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "version_kind": "provider_alias",
+      "context_tokens": 1050000,
+      "generation": {
+        "max_completion_tokens": 768,
+        "reasoning_effort": "none",
+        "service_tier": "default"
+      },
+      "tariff": {
+        "input_per_million": "0.10",
+        "output_per_million": "0.50",
+        "cached_input_per_million": "0.01",
+        "cache_write_per_million": "0.125",
+        "long_context_threshold": 272000,
+        "long_input_multiplier": "2",
+        "long_output_multiplier": "1.5",
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+        "checked_at": "2026-10-17"
+      }
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "version_kind": "dated_snapshot",
+      "context_tokens": 1047576,
+      "generation": {
+        "max_completion_tokens": 768,
+        "temperature": 0,
+        "service_tier": "default"
+      },
+      "tariff": {
+        "input_per_million": "0.40",
+        "output_per_million": "1.60",
+        "cached_input_per_million": "0.10",
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+        "checked_at": "2026-10-17"
+      }
+    },
+    "gpt-6.1-sol": {
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "version_kind": "provider_alias",
+      "context_tokens": 1050000,
+      "generation": {
+        "max_completion_tokens": 3072,
+        "reasoning_effort": "low",
+        "service_tier": "default"
+      },
+      "tariff": {
+        "input_per_million": "2.00",
+        "output_per_million": "10.00",
+        "cached_input_per_million": "0.10",
+        "cache_write_per_million": "2.50",
+        "long_context_threshold": 272000,
+        "long_input_multiplier": "2",
+        "long_output_multiplier": "1.5",
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "checked_at": "2026-10-17"
+      }
+    },
+    "Qwen/Qwen3.5-9B": {
+      "provider": "together",
+      "model": "Qwen/Qwen3.5-9B",
+      "version_kind": "provider_model_selector",
+      "backend": "together-sdk-2.41.0",
+      "context_tokens": 262144,
+      "generation": {
+        "max_tokens": 768,
+        "temperature": 0,
+        "reasoning": {
+          "enabled": false
+        }
+      },
+      "tariff": {
+        "input_per_million": "0.17",
+        "output_per_million": "0.25",
+        "cached_input_per_million": null,
+        "source_url": "https://docs.together.ai/docs/serverless/models",
+        "checked_at": "2026-10-17"
+      }
+    },
+    "MiniMaxAI/MiniMax-M3": {
+      "provider": "together",
+      "model": "MiniMaxAI/MiniMax-M3",
+      "version_kind": "provider_model_selector",
+      "backend": "together-sdk-2.41.0",
+      "context_tokens": 524288,
+      "generation": {
+        "max_tokens": 768,
+        "temperature": 0,
+        "reasoning": {
+          "enabled": false
+        }
+      },
+      "tariff": {
+        "input_per_million": "0.30",
+        "output_per_million": "1.20",
+        "cached_input_per_million": "0.06",
+        "source_url": "https://docs.together.ai/docs/serverless/models",
+        "checked_at": "2026-10-17"
+      }
+    },
+    "deepseek-ai/DeepSeek-V4-Pro-0813": {
+      "provider": "together",
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "version_kind": "provider_model_selector",
+      "backend": "together-sdk-2.41.0",
+      "context_tokens": 1048576,
+      "generation": {
+        "max_tokens": 768,
+        "temperature": 0,
+        "reasoning": {
+          "enabled": false
+        }
+      },
+      "tariff": {
+        "input_per_million": "1.32",
+        "output_per_million": "3.96",
+        "cached_input_per_million": "0.13",
+        "source_url": "https://docs.together.ai/docs/serverless/models",
+        "checked_at": "2026-10-17"
+      }
+    },
+    "openai/gpt-oss-120b": {
+      "provider": "together",
+      "model": "openai/gpt-oss-120b",
+      "version_kind": "provider_model_selector",
+      "backend": "together-sdk-2.41.0",
+      "context_tokens": 131072,
+      "generation": {
+        "max_tokens": 3072,
+        "temperature": 0,
+        "reasoning_effort": "low"
+      },
+      "tariff": {
+        "input_per_million": "0.15",
+        "output_per_million": "0.60",
+        "cached_input_per_million": null,
+        "source_url": "https://docs.together.ai/docs/serverless/models",
+        "checked_at": "2026-10-17"
+      }
+    }
+  },
+  "campaign": {
+    "campaign_id": "egpr-2026-10-17",
+    "authorized_total_usd": "200",
+    "initial_development_ceiling_usd": "10",
+    "authorization": "User explicitly approved US$200 in chat; first development phase capped at US$10.",
+    "ledger_path": "results/api_campaign/calls.jsonl",
+    "default_paid": false,
+    "currency": "USD",
+    "accounting": "Conservative usage-based estimates and unresolved reservations; actual provider bills recorded separately.",
+    "allocation_usd": {
+      "development": 10,
+      "two_primary_models_full_controls": 80,
+      "additional_family_breadth": 60,
+      "robustness_and_failure_audits": 30,
+      "unallocated_reserve": 20
+    },
+    "cached_calls_are_independent_replicates": false,
+    "automatic_model_fallback": false,
+    "automatic_network_retries": 0,
+    "selected_primary_models": [
+      "gpt-6-luna",
+      "deepseek-ai/DeepSeek-V4-Pro-0813"
+    ],
+    "primary_selection_note": "Two accessible families for development integration, selected before inspecting DeepSeek VOI results; not a frozen paper model roster. Deprecated GPT-4.1 remains a reported development comparison.",
+    "breadth_candidates": [
+      "gpt-6.1-sol",
+      "Qwen/Qwen3.5-9B",
+      "MiniMaxAI/MiniMax-M3",
+      "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "openai/gpt-oss-120b"
+    ],
+    "provider_status": {
+      "openai": "Paid inference succeeded after the user replenished credits; budget and cached failure retained.",
+      "together": "Replacement credential passed four access gates and all 16 four-model VOI states. A transient MiniMax 429 was explicitly resumed after cooldown; two-second pacing is active. All prior failures and cost reservations retained; no automatic retries."
+    },
+    "provider_minimum_request_interval_seconds": {
+      "together": 2
+    },
+    "sequential_development_models": [
+      "gpt-6-luna",
+      "deepseek-ai/DeepSeek-V4-Pro-0813"
+    ],
+    "sequential_selection_note": "Two accessible families selected for sequential development before inspecting the DeepSeek model-VOI results; not a frozen paper roster."
+  },
+  "replicate_id": "development-0",
+  "cases": [
+    "missing_evidence",
+    "supported",
+    "wrong_subject",
+    "source_conflict",
+    "explicit_negative",
+    "missing_cross_service_evidence",
+    "complete_cross_service",
+    "same_source_correction"
+  ],
+  "scope": "eight deterministic synthetic development fixtures; no population inference"
+}
