@@ -34,11 +34,16 @@ class PlanStatus:
 
 
 class Evaluator:
+    value_model_fingerprint = "exact-finite-terminal-v1"
+
     def __init__(self, cache: bool = False):
         self.cache = cache
         self.work = Work()
         self._statuses: dict[tuple, PlanStatus] = {}
         self._values: dict[tuple, F] = {}
+
+    def bound_index(self, state):
+        return BoundIndex(state, self)
 
     def _key(self, state: State, plan: Plan):
         return (plan, state.required_needs, state.source_snapshot,
@@ -194,9 +199,12 @@ class Certificate:
         "rational comparisons; equal bounds retained",
     )
     expiry_rule: str = "any public state, source, utility, candidate or query-model change"
+    value_model_fingerprint: str = "exact-finite-terminal-v1"
 
-    def valid(self, state: State, queries: tuple[Query, ...]) -> bool:
+    def valid(self, state: State, queries: tuple[Query, ...], *,
+              value_model_fingerprint="exact-finite-terminal-v1") -> bool:
         return (self.proof_mode == "exact_modeled" and state.structure_trusted
+                and self.value_model_fingerprint == value_model_fingerprint
                 and self.state_fingerprint == state.fingerprint
                 and self.query_set_fingerprint == digest(queries)
                 and self.upper_bound < self.comparator_lower)
@@ -219,12 +227,14 @@ POLICIES = {
 
 
 class Controller:
-    def __init__(self, policy: str = "P"):
+    def __init__(self, policy: str = "P", *, evaluator: Evaluator | None = None):
         if policy not in POLICIES:
             raise ValueError(f"Implemented policies: {tuple(POLICIES)}")
         self.policy = policy
         self.screen, cache = POLICIES[policy]
-        self.evaluator = Evaluator(cache)
+        self.evaluator = evaluator if evaluator is not None else Evaluator(cache)
+        if self.evaluator.cache != cache:
+            raise ValueError("Injected evaluator must use the policy's common cache setting")
 
     def decide(self, state: State, queries: tuple[Query, ...], *, branch_budget: int | None = None) -> Decision:
         if len({q.query_id for q in queries}) != len(queries) or any(q.query_id == "STOP" for q in queries):
@@ -253,7 +263,7 @@ class Controller:
         screen = self.screen and state.structure_trusted and state.dependencies_complete
         fallback = None if screen or not self.screen else "uncertified_structure_full_voi"
         if screen:
-            index = BoundIndex(state, self.evaluator)
+            index = self.evaluator.bound_index(state)
             intervals = {qid: index.bounds(q, base) for qid, q in active.items()}
 
         def best_lower():
@@ -271,7 +281,8 @@ class Controller:
                         if query_set_fingerprint is None:
                             query_set_fingerprint = digest(queries)
                         certificates.append(Certificate(qid, iv.lower, iv.upper, comparator, lower,
-                            state.fingerprint, query_set_fingerprint, iv.branches))
+                            state.fingerprint, query_set_fingerprint, iv.branches,
+                            value_model_fingerprint=self.evaluator.value_model_fingerprint))
                         self.evaluator.work.certificates += 1
                         removed.add(qid)
             pending = [qid for qid in active if qid not in removed and qid not in evaluated
