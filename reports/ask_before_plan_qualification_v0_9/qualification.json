@@ -1,0 +1,76 @@
+{
+  "scope": "Training split schema qualification only; no model evaluation or held-out access",
+  "dataset": "magicgh/Ask-before-Plan",
+  "revision": "4ff2b9fa7c2e4f924b0536170a33e8261090b950",
+  "dataset_license_as_declared": "cc-by-4.0",
+  "author_code_commit": "37576b24a2aeb82753e7b4cdfce7fbb36583b1f4",
+  "author_code_license_as_declared": "MIT",
+  "input_sha256": {
+    "README.md": "fff2fd78a72634685986821e3886691d4497a107831c94b58f062fb676fce515",
+    "train.csv": "9ab146755031ea5d32b73d66305c8a5db578abf4212bb161723946a43d411462"
+  },
+  "rows": 1000,
+  "columns": [
+    "org",
+    "dest",
+    "days",
+    "departure_date",
+    "people_number",
+    "housing",
+    "cuisine",
+    "transportation",
+    "budget",
+    "query",
+    "level",
+    "details"
+  ],
+  "task_id_column_present": false,
+  "distinct_initial_query_strings": 999,
+  "levels": {
+    "hard": 333,
+    "medium": 336,
+    "easy": 331
+  },
+  "details_per_row": {
+    "0": 100,
+    "1": 300,
+    "2": 300,
+    "3": 300
+  },
+  "disclosures": 1800,
+  "operations": {
+    "ADD": 1204,
+    "REPLACE": 596
+  },
+  "attributes": {
+    "budget": 384,
+    "dest": 379,
+    "people_number": 200,
+    "days": 199,
+    "departure_date": 199,
+    "housing": 182,
+    "org": 219,
+    "transportation": 20,
+    "cuisine": 18
+  },
+  "priorities": {
+    "0": 1400,
+    "1": 254,
+    "2": 146
+  },
+  "missing_or_empty_stored_answers": 0,
+  "null_stored_values": 111,
+  "rows_repeating_a_disclosure_attribute": 59,
+  "independent_source_groups": null,
+  "heldout_rows_loaded": 0,
+  "api_calls": 0,
+  "environment_database_downloaded": false,
+  "qualification": "Stored clarification fields available; full travel tools, evaluation and provenance grouping not yet qualified",
+  "limits": [
+    "Distinct strings or row indices are not independent source-group identifiers.",
+    "The upstream loader declares task_id but this pinned CSV does not contain it; direct loader compatibility is not established.",
+    "The separate travel database and its provenance/license remain to be checked before a full planning evaluation.",
+    "Benchmark-specific empty preference semantics cannot be imported into FoodPath evidence checks.",
+    "No cross-domain effectiveness, operational travel success or valid EGPR bounds are inferred from schema availability."
+  ]
+}
