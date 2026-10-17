@@ -14,7 +14,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from egpr.api import ChatBackend, Tariff, load_credentials
+from egpr.api import Tariff, load_credentials
+from egpr.providers import make_backend
 from egpr.fixtures import instance
 from egpr.ledger import AccessBlocked, BudgetExceeded, Ledger
 from egpr.mas import ModelRoles
@@ -54,7 +55,7 @@ def main():
     try:
         for name, model in selected.items():
             tariff = Tariff(**model["tariff"])
-            backend = ChatBackend(credentials, tariff)
+            backend = make_backend(model["provider"], credentials, tariff)
             value_id = model_value_fingerprint(model, args.replicate_id)
             for setting in bank:
                 states, qs, _ = instance(*setting, preferences=False, correlated=True)

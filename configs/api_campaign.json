@@ -17,14 +17,20 @@
   "cached_calls_are_independent_replicates": false,
   "automatic_model_fallback": false,
   "automatic_network_retries": 0,
-  "selected_primary_models": ["gpt-6-luna", "gpt-4.1-mini-2025-04-14"],
+  "selected_primary_models": [
+    "gpt-6-luna",
+    "gpt-4.1-mini-2025-04-14"
+  ],
   "primary_selection_note": "Development candidates with listed access; replace deprecated GPT-4.1 with a current second family when that API becomes available. This is not yet a frozen paper model roster.",
   "breadth_candidates": [
-    "gpt-6.1-sol", "Qwen/Qwen3.5-9B", "deepseek-ai/DeepSeek-V4.1-Flash",
-    "MiniMaxAI/MiniMax-M3", "nvidia/NVIDIA-Nemotron-3.5-Super-VL", "openai/gpt-oss-120b"
+    "gpt-6.1-sol",
+    "Qwen/Qwen3.5-9B",
+    "MiniMaxAI/MiniMax-M3",
+    "deepseek-ai/DeepSeek-V4-Pro-0813",
+    "openai/gpt-oss-120b"
   ],
   "provider_status": {
-    "openai": "Model-list GET succeeded; paid inference availability not established by model listing.",
-    "together": "Metadata GET returned HTTP 403; keep disabled until access is resolved. No automatic retry."
+    "openai": "Paid inference succeeded after the user replenished credits; budget and cached failure retained.",
+    "together": "Official SDK 2.41.0 model-list GET succeeded after urllib returned HTTP 403; paid-inference development gate required."
   }
 }

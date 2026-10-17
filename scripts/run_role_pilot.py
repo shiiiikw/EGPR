@@ -10,7 +10,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from egpr.api import ChatBackend, ModelResponseError, Tariff, load_credentials
+from egpr.api import ModelResponseError, Tariff, load_credentials
+from egpr.providers import make_backend
 from egpr.ledger import AccessBlocked, BudgetExceeded, Ledger
 from egpr.mas import ModelRoles, diagnostic_cases
 from egpr.schema import canonical
@@ -49,7 +50,7 @@ def main():
     try:
         for name, model in selected.items():
             tariff = Tariff(**model["tariff"])
-            backend = ChatBackend(credentials, tariff)
+            backend = make_backend(model["provider"], credentials, tariff)
             for case_name, state in diagnostic_cases()[:args.cases]:
                 roles = ModelRoles(ledger, model, backend, tariff, replicate_id=args.replicate_id)
                 expected = Evaluator().terminal(state)[1]

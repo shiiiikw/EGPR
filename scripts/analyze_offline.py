@@ -41,7 +41,7 @@ def main():
     for row in by_scale:
         values = " | ".join(f'{row["comparisons"]["P/" + b]["cpu_seconds"]:.3f}' for b in ("B1", "B2", "B3", "A1"))
         lines.append(f'| {row["plans"]} | {row["conditions"]} | {row["instances"]} | {values} |')
-    lines += ["", "P and B3 execute the same algorithm in this stage. Their small timing", 
+    lines += ["", "P and B3 execute the same algorithm in this stage. Their small timing",
               "differences are measurement/order effects, not a method advantage.", ""]
     (args.output / "table.md").write_text("\n".join(lines))
     print("\n".join(lines))
