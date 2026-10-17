@@ -1,0 +1,10 @@
+{
+  "source_sha256": "8357c83facf86ebde7bed41dd1af0d3d5f4ef80570a5dfe681d11a324bdeb060",
+  "split_sha256": "d04afbe11fbe3ccea270d718922d00ad712b011c71ceae1b8cc49b2201997cb7",
+  "source_hashes": {
+    "scripts/audit_native_user.py": "4d026dfb5044375b705c9b06397c96e9206f5f0c20029ce1ead5a4d9a7e0465f",
+    "src/egpr/native_user.py": "66ea25c85b8e10cd4584e28f0c032575f7d6f95de4d74141f6568c620d91da4c",
+    "src/egpr/native_adapter.py": "ba66a9a6d729614463fa7555b4f39dac7afaf211741135a83d717fc6477357c9"
+  },
+  "raw_source_redistributed": false
+}

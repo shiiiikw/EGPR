@@ -31,6 +31,6 @@
   ],
   "provider_status": {
     "openai": "Paid inference succeeded after the user replenished credits; budget and cached failure retained.",
-    "together": "Official SDK 2.41.0 model-list GET succeeded after urllib returned HTTP 403; paid-inference development gate required."
+    "together": "Official SDK 2.41.0 metadata and three Qwen role calls succeeded; a subsequent HTTP 402 credit_limit keeps the paid queue blocked. Authenticated identity works; beta billing-usage GET returned 404. User reported replenishing credits; current balance cannot be verified via available API."
   }
 }

@@ -23,7 +23,8 @@ uv run python scripts/run_offline.py --output results/my-full-grid
 ```
 
 Every output directory must be new. These commands use no model service, API key,
-or third-party dataset. Runtime code uses the Python standard library.
+or third-party dataset. The finite core uses the Python standard library;
+Together inference additionally uses its pinned official SDK (`uv sync --extra together`).
 
 ## Implemented first stage
 
@@ -38,11 +39,15 @@ or third-party dataset. Runtime code uses the Python standard library.
   guard; a separate controlled environment holds simulator truth.
 - Full-request caching, append-only accounting, interrupted reservations, process
   locking, and explicit recovery after externally resolved API access failures.
-- OpenAI/Together-compatible text API adapter; actual Planner, Reviewer and
-  Coordinator calls with bounded guard recovery. Together access is not yet working.
+- OpenAI and official Together SDK transports; actual Planner, Reviewer and
+  Coordinator calls with bounded guard recovery. Together passed one Qwen case,
+  then returned a credit-limit error; the paid cross-family queue is blocked.
 - A fallible model terminal evaluator with zero lower bounds, structural upper
   bounds and model-specific certificates. Its guarantee is conditional on a
   frozen exact-request response mapping.
+- A field-limited native user adapter: scoped answers, unresolved missing fields,
+  repeated-item accounting and atomic budgets. Initial preferred profiles cannot
+  disclose later alternatives. See [the native adapter contract](docs/NATIVE_ADAPTER.md).
 
 The implementation is limited to fixed candidate pools, Boolean conditions and
 one-field Ask/Verify. Dynamic pool replacement invalidates cached certificates;
@@ -57,7 +62,10 @@ See [the current research report](docs/PROGRESS_2026_10_17.md),
 [API budget and breadth protocol](docs/API_PROTOCOL.md), and
 [model VOI correctness/accounting](docs/MODEL_VOI_PROTOCOL.md).
 The full 180-instance grid and correlated robustness variant have passed their
-audits. Full-system extraction, real-source candidate construction, B0/B4,
+audits. Three OpenAI configurations have completed four model VOI development
+states each, including all five controls and failure accounting;
+[the table](reports/model_voi_analysis_v0_5/table.md) includes model abstentions
+and rejected recovery. Full-system extraction, real-source candidate construction, B0/B4,
 cross-family effectiveness and cross-domain tests remain later gates.
 
 The user authorized a US$200 campaign with a US$10 initial development ceiling.

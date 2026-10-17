@@ -1,0 +1,46 @@
+{
+  "scope": "exhaustive native development disclosure audit, not a policy or effectiveness experiment",
+  "development_source_groups": 9,
+  "development_cases": 10,
+  "reserved_cases_evaluated": 0,
+  "counts": {
+    "values": 43,
+    "unknown": 32,
+    "repeat_checks": 15,
+    "requested_information_items": 90,
+    "distinct_information_items": 75,
+    "user_rounds": 30,
+    "needs": 15,
+    "preferred_profile_cases": 6
+  },
+  "field_statuses": {
+    "schedule": {
+      "values": 14,
+      "unknown": 1
+    },
+    "location": {
+      "values": 15
+    },
+    "intake_methods": {
+      "values": 8,
+      "unknown": 7
+    },
+    "available_documents": {
+      "unknown": 13,
+      "values": 2
+    },
+    "eligibility": {
+      "unknown": 11,
+      "values": 4
+    }
+  },
+  "api_calls": 0,
+  "paid_usd": 0,
+  "initial_public_context": "service categories and opaque within-task need scopes only",
+  "empty_field_semantics": "unresolved; never inferred absence or waived preference",
+  "preference_transition": "initial preferred profile only; later alternative and consent are not modeled",
+  "limitations": [
+    "No free-text extraction, query valuation, live source check, or real-user validation",
+    "Coverage of stored fields cannot establish supported operational completion"
+  ]
+}

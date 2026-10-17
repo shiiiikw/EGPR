@@ -55,11 +55,23 @@ failures while remaining inconclusive about small quality losses. Repeated seeds
 or cached responses do not increase the number of independent source groups.
 Current P equals generic B3; model breadth does not establish algorithm novelty.
 
-The initial accessible candidates are GPT-6 Luna and dated GPT-4.1 Mini; the
-latter is deprecated in current documentation and serves only as a development
-comparison. Current-family replacements will be frozen before the main study.
-Together access returned HTTP 403 on metadata retrieval. Its models stay disabled
-until access is resolved. We do not silently switch providers after a block.
+The three completed development configurations are GPT-6 Luna, dated GPT-4.1
+Mini and GPT-6.1 Sol. GPT-4.1 Mini is deprecated in current documentation and
+serves only as a development comparison. Current-family replacements will be
+frozen before the main study. The four configured Together candidates are
+Qwen3.5-9B, MiniMax M3, DeepSeek V4 Pro 0813 and GPT-OSS 120B; availability is not
+the same as a completed experiment.
+
+Together metadata retrieval initially returned HTTP 403 with the standard
+library transport. Its official SDK 2.41.0 successfully listed models, so the
+transport now uses that SDK with automatic retries disabled. After the user
+reported replenishing credits and more than five minutes passed since the first
+402, one Qwen three-role case completed. The next request again returned
+HTTP 402 `credit_limit`. Every attempt and reservation is retained; the shared
+paid queue is blocked pending external billing resolution. An authenticated
+identity check succeeded, but the beta billing-usage endpoint returned 404.
+No replacement API key or larger experiment budget is inferred to be necessary.
+We do not silently switch providers after a block.
 
 ## Cache and accounting
 
@@ -88,7 +100,11 @@ Primary API sources checked 2026-10-17:
 [GPT-4.1 Mini](https://developers.openai.com/api/docs/models/gpt-4.1-mini),
 [GPT-6.1 Sol](https://developers.openai.com/api/docs/models/gpt-6.1-sol),
 [Together model catalog](https://docs.together.ai/docs/serverless/models),
-[Together structured output](https://docs.together.ai/docs/inference/chat/structured-outputs).
+[Together structured output](https://docs.together.ai/docs/inference/chat/structured-outputs),
+[Together API key identity](https://docs.together.ai/reference/whoami),
+[Together billing usage](https://docs.together.ai/reference/billing-usage).
+The billing-usage API is organization-enabled beta and is not a remaining-credit
+balance endpoint. An unavailable response cannot be interpreted as zero balance.
 
 ## Run the development gate
 
