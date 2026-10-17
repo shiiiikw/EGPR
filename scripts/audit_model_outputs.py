@@ -82,6 +82,8 @@ def main():
                         max_output = max(max_output, value)
             details = usage.get("completion_tokens_details") or {}
             reasoning = details.get("reasoning_tokens") if isinstance(details, dict) else None
+            if reasoning is None:
+                reasoning = usage.get("reasoning_tokens")
             if type(reasoning) is int:
                 tokens["reasoning_tokens_reported"] += reasoning
                 tokens["reasoning_token_receipts"] += 1

@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "completed_cases": 8,
+  "correct_cases": 8,
+  "new_network_attempts": 21,
+  "local_cache_reuses": 3,
+  "campaign_occupancy_usd": "0.882537950",
+  "actual_billed_usd": null,
+  "billing_note": "Usage estimate plus unresolved reservations; no invoice received",
+  "per_model": {
+    "Qwen/Qwen3.5-9B": {
+      "completed": 2,
+      "correct": 2
+    },
+    "MiniMaxAI/MiniMax-M3": {
+      "completed": 2,
+      "correct": 2
+    },
+    "deepseek-ai/DeepSeek-V4-Pro-0813": {
+      "completed": 2,
+      "correct": 2
+    },
+    "openai/gpt-oss-120b": {
+      "completed": 2,
+      "correct": 2
+    }
+  }
+}

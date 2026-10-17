@@ -66,3 +66,20 @@ uv run python scripts/run_model_voi.py --cases 2 \
 Use `--models` to select documented configurations. Additional independent
 replicates require a different `--replicate-id`, an explicit experiment purpose,
 and available campaign budget. They do not enlarge the independent case count.
+
+## Development output-cap diagnostic
+
+The four-state Qwen3.5-9B run at 768 output tokens produced 15 response errors
+and 29 no-delivery outcomes among 52 B2 terminal evaluations. Inspection found
+visible-output truncation with reported reasoning-token usage zero. Before
+running a cap variant, the extension was fixed to **all four original states**
+and all five methods, with a 1,536-token cap and otherwise unchanged parameters.
+Both configurations remain reported, including every failure. The higher cap
+is not an automatic retry, a new foundation model, or an independent replicate.
+It changes the complete request key, so it cannot reuse a response from the
+768-token request. The configured name is `Qwen/Qwen3.5-9B-cap1536`.
+
+Completion counts must accompany request reductions: a truncated Planner can
+terminate a pipeline early and make it appear cheaper. The output audit records
+unique B2 requests, finish reasons, parse failures, output caps and reported
+reasoning tokens. Missing usage fields are not silently interpreted as zero.

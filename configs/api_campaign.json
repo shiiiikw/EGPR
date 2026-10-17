@@ -19,9 +19,9 @@
   "automatic_network_retries": 0,
   "selected_primary_models": [
     "gpt-6-luna",
-    "gpt-4.1-mini-2025-04-14"
+    "deepseek-ai/DeepSeek-V4-Pro-0813"
   ],
-  "primary_selection_note": "Development candidates with listed access; replace deprecated GPT-4.1 with a current second family when that API becomes available. This is not yet a frozen paper model roster.",
+  "primary_selection_note": "Two accessible families for development integration, selected before inspecting DeepSeek VOI results; not a frozen paper model roster. Deprecated GPT-4.1 remains a reported development comparison.",
   "breadth_candidates": [
     "gpt-6.1-sol",
     "Qwen/Qwen3.5-9B",
@@ -31,7 +31,7 @@
   ],
   "provider_status": {
     "openai": "Paid inference succeeded after the user replenished credits; budget and cached failure retained.",
-    "together": "Replacement user-supplied credential passed all four model access gates. First Qwen four-state queue completed; MiniMax HTTP 429 rate_limit triggered a recorded stop. Resume after cooldown with two-second request-start spacing; no automatic retries and no quota bypass."
+    "together": "Replacement credential passed four access gates and all 16 four-model VOI states. A transient MiniMax 429 was explicitly resumed after cooldown; two-second pacing is active. All prior failures and cost reservations retained; no automatic retries."
   },
   "provider_minimum_request_interval_seconds": {
     "together": 2

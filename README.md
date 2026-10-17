@@ -40,8 +40,8 @@ Together inference additionally uses its pinned official SDK (`uv sync --extra t
 - Full-request caching, append-only accounting, interrupted reservations, process
   locking, and explicit recovery after externally resolved API access failures.
 - OpenAI and official Together SDK transports; actual Planner, Reviewer and
-  Coordinator calls with bounded guard recovery. Together passed one Qwen case,
-  then returned a credit-limit error; the paid cross-family queue is blocked.
+  Coordinator calls with bounded guard recovery. All four Together models passed
+  the initial access gate; the model VOI queue now uses explicit request pacing.
 - A fallible model terminal evaluator with zero lower bounds, structural upper
   bounds and model-specific certificates. Its guarantee is conditional on a
   frozen exact-request response mapping.
@@ -62,11 +62,15 @@ See [the current research report](docs/PROGRESS_2026_10_17.md),
 [API budget and breadth protocol](docs/API_PROTOCOL.md), and
 [model VOI correctness/accounting](docs/MODEL_VOI_PROTOCOL.md).
 The full 180-instance grid and correlated robustness variant have passed their
-audits. Three OpenAI configurations have completed four model VOI development
+audits. Seven model configurations have completed four model VOI development
 states each, including all five controls and failure accounting;
-[the table](reports/model_voi_analysis_v0_5/table.md) includes model abstentions
-and rejected recovery. Full-system extraction, real-source candidate construction, B0/B4,
-cross-family effectiveness and cross-domain tests remain later gates.
+[the table](reports/model_voi_analysis_v0_10/table.md) includes model abstentions
+and rejected recovery. A complete seven-model replay reused 3,269 responses with
+zero new network attempts. The [output audit](reports/model_output_audit_v0_10/output_audit.json)
+separates truncation from valid abstention. Full-system extraction, real-source
+candidate construction, B0/B4, cross-family effectiveness and cross-domain tests
+remain later gates. See the [baseline mapping](docs/BASELINE_SOURCE_AUDIT.md) and
+[cross-domain input qualification](docs/CROSS_DOMAIN_QUALIFICATION.md).
 
 The user authorized a US$200 campaign with a US$10 initial development ceiling.
 Paid execution still requires `--allow-paid`; default runs reuse cache only.

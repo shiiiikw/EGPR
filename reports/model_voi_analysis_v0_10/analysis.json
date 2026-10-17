@@ -1,0 +1,319 @@
+{
+  "scope": "descriptive development model/state pairs; counterfactual branches are not independent cases",
+  "source_runs": [
+    {
+      "run": "model_voi_all_v0_10_replay",
+      "replicate_id": "model-voi-development-0",
+      "input_sha256": {
+        "manifest.json": "01c2b1422731deba7f2b14bfeed34c6f2e0d2d24b8623620fe76c4d18e2a5028",
+        "summary.json": "288ad8ac915ceca021ddb921c3d476f137e550373ccacdc7606b6f2960c3ae9c",
+        "traces.jsonl": "47cc3ddadcc34ceccc838ae8da1db4174f632ac6507abbb050f46ea4569411a3"
+      }
+    }
+  ],
+  "models": {
+    "MiniMaxAI/MiniMax-M3": {
+      "model_state_pairs": 4,
+      "methods": {
+        "B1": {
+          "unique_requests_summed_over_states": 154,
+          "logical_usd": "0.0753630",
+          "unpriced_requests": 0
+        },
+        "B2": {
+          "unique_requests_summed_over_states": 154,
+          "logical_usd": "0.0753630",
+          "unpriced_requests": 0
+        },
+        "B3": {
+          "unique_requests_summed_over_states": 46,
+          "logical_usd": "0.0233169",
+          "unpriced_requests": 0
+        },
+        "A1": {
+          "unique_requests_summed_over_states": 46,
+          "logical_usd": "0.0233169",
+          "unpriced_requests": 0
+        },
+        "P": {
+          "unique_requests_summed_over_states": 46,
+          "logical_usd": "0.0233169",
+          "unpriced_requests": 0
+        }
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      },
+      "B2_terminal_audit": {
+        "terminal_evaluations": 52,
+        "initial_guard_rejected": 0,
+        "final_guard_rejected": 0,
+        "parse_failure": 1,
+        "no_delivery": 26
+      },
+      "P_B3_equal": true
+    },
+    "Qwen/Qwen3.5-9B": {
+      "model_state_pairs": 4,
+      "methods": {
+        "B1": {
+          "unique_requests_summed_over_states": 128,
+          "logical_usd": "0.03205291",
+          "unpriced_requests": 0
+        },
+        "B2": {
+          "unique_requests_summed_over_states": 128,
+          "logical_usd": "0.03205291",
+          "unpriced_requests": 0
+        },
+        "B3": {
+          "unique_requests_summed_over_states": 73,
+          "logical_usd": "0.01772905",
+          "unpriced_requests": 0
+        },
+        "A1": {
+          "unique_requests_summed_over_states": 73,
+          "logical_usd": "0.01772905",
+          "unpriced_requests": 0
+        },
+        "P": {
+          "unique_requests_summed_over_states": 73,
+          "logical_usd": "0.01772905",
+          "unpriced_requests": 0
+        }
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      },
+      "B2_terminal_audit": {
+        "terminal_evaluations": 52,
+        "initial_guard_rejected": 0,
+        "final_guard_rejected": 0,
+        "parse_failure": 15,
+        "no_delivery": 29
+      },
+      "P_B3_equal": true
+    },
+    "deepseek-ai/DeepSeek-V4-Pro-0813": {
+      "model_state_pairs": 4,
+      "methods": {
+        "B1": {
+          "unique_requests_summed_over_states": 156,
+          "logical_usd": "0.22976976",
+          "unpriced_requests": 0
+        },
+        "B2": {
+          "unique_requests_summed_over_states": 156,
+          "logical_usd": "0.22976976",
+          "unpriced_requests": 0
+        },
+        "B3": {
+          "unique_requests_summed_over_states": 48,
+          "logical_usd": "0.06791664",
+          "unpriced_requests": 0
+        },
+        "A1": {
+          "unique_requests_summed_over_states": 48,
+          "logical_usd": "0.06791664",
+          "unpriced_requests": 0
+        },
+        "P": {
+          "unique_requests_summed_over_states": 48,
+          "logical_usd": "0.06791664",
+          "unpriced_requests": 0
+        }
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      },
+      "B2_terminal_audit": {
+        "terminal_evaluations": 52,
+        "initial_guard_rejected": 0,
+        "final_guard_rejected": 0,
+        "parse_failure": 0,
+        "no_delivery": 9
+      },
+      "P_B3_equal": true
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "model_state_pairs": 4,
+      "methods": {
+        "B1": {
+          "unique_requests_summed_over_states": 171,
+          "logical_usd": "0.0843452",
+          "unpriced_requests": 0
+        },
+        "B2": {
+          "unique_requests_summed_over_states": 171,
+          "logical_usd": "0.0843452",
+          "unpriced_requests": 0
+        },
+        "B3": {
+          "unique_requests_summed_over_states": 51,
+          "logical_usd": "0.0237276",
+          "unpriced_requests": 0
+        },
+        "A1": {
+          "unique_requests_summed_over_states": 51,
+          "logical_usd": "0.0237276",
+          "unpriced_requests": 0
+        },
+        "P": {
+          "unique_requests_summed_over_states": 51,
+          "logical_usd": "0.0237276",
+          "unpriced_requests": 0
+        }
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      },
+      "B2_terminal_audit": {
+        "terminal_evaluations": 52,
+        "initial_guard_rejected": 15,
+        "final_guard_rejected": 10,
+        "parse_failure": 0,
+        "no_delivery": 23
+      },
+      "P_B3_equal": true
+    },
+    "gpt-6-luna": {
+      "model_state_pairs": 4,
+      "methods": {
+        "B1": {
+          "unique_requests_summed_over_states": 157,
+          "logical_usd": "0.0190233",
+          "unpriced_requests": 0
+        },
+        "B2": {
+          "unique_requests_summed_over_states": 157,
+          "logical_usd": "0.0190233",
+          "unpriced_requests": 0
+        },
+        "B3": {
+          "unique_requests_summed_over_states": 57,
+          "logical_usd": "0.0067442",
+          "unpriced_requests": 0
+        },
+        "A1": {
+          "unique_requests_summed_over_states": 57,
+          "logical_usd": "0.0067442",
+          "unpriced_requests": 0
+        },
+        "P": {
+          "unique_requests_summed_over_states": 57,
+          "logical_usd": "0.0067442",
+          "unpriced_requests": 0
+        }
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      },
+      "B2_terminal_audit": {
+        "terminal_evaluations": 52,
+        "initial_guard_rejected": 1,
+        "final_guard_rejected": 0,
+        "parse_failure": 0,
+        "no_delivery": 2
+      },
+      "P_B3_equal": true
+    },
+    "gpt-6.1-sol": {
+      "model_state_pairs": 4,
+      "methods": {
+        "B1": {
+          "unique_requests_summed_over_states": 156,
+          "logical_usd": "0.340984",
+          "unpriced_requests": 0
+        },
+        "B2": {
+          "unique_requests_summed_over_states": 156,
+          "logical_usd": "0.340984",
+          "unpriced_requests": 0
+        },
+        "B3": {
+          "unique_requests_summed_over_states": 48,
+          "logical_usd": "0.103030",
+          "unpriced_requests": 0
+        },
+        "A1": {
+          "unique_requests_summed_over_states": 48,
+          "logical_usd": "0.103030",
+          "unpriced_requests": 0
+        },
+        "P": {
+          "unique_requests_summed_over_states": 48,
+          "logical_usd": "0.103030",
+          "unpriced_requests": 0
+        }
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      },
+      "B2_terminal_audit": {
+        "terminal_evaluations": 52,
+        "initial_guard_rejected": 0,
+        "final_guard_rejected": 0,
+        "parse_failure": 0,
+        "no_delivery": 0
+      },
+      "P_B3_equal": true
+    },
+    "openai/gpt-oss-120b": {
+      "model_state_pairs": 4,
+      "methods": {
+        "B1": {
+          "unique_requests_summed_over_states": 156,
+          "logical_usd": "0.03709455",
+          "unpriced_requests": 0
+        },
+        "B2": {
+          "unique_requests_summed_over_states": 156,
+          "logical_usd": "0.03709455",
+          "unpriced_requests": 0
+        },
+        "B3": {
+          "unique_requests_summed_over_states": 48,
+          "logical_usd": "0.01107540",
+          "unpriced_requests": 0
+        },
+        "A1": {
+          "unique_requests_summed_over_states": 48,
+          "logical_usd": "0.01107540",
+          "unpriced_requests": 0
+        },
+        "P": {
+          "unique_requests_summed_over_states": 48,
+          "logical_usd": "0.01107540",
+          "unpriced_requests": 0
+        }
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      },
+      "B2_terminal_audit": {
+        "terminal_evaluations": 52,
+        "initial_guard_rejected": 0,
+        "final_guard_rejected": 0,
+        "parse_failure": 0,
+        "no_delivery": 2
+      },
+      "P_B3_equal": true
+    }
+  },
+  "cost_note": "Logical cost prices each unique request once without provider cache discounts; not a bill.",
+  "guard_note": "B2 enumerated terminal evaluations only, including abstentions and failed recovery. Not an online task success rate."
+}

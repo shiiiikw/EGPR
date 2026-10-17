@@ -75,14 +75,14 @@ class ModelRoles:
         context = {"state": public, "proposal": proposal, "review": review}
         decision = self.ask("Coordinator: decide the final plan", context, PLAN_SCHEMA)
         trace = {"proposal": proposal, "review": review, "initial_decision": decision,
-                 "initial_guard": guard(state, decision["plan_id"]) if decision["plan_id"] else None,
+                 "initial_guard": guard(state, decision["plan_id"]) if decision["plan_id"] is not None else None,
                  "recovery": None}
         if decision["plan_id"] is not None and not trace["initial_guard"]["allowed"]:
             # One identical recovery opportunity in every arm; bounded and billed.
             context.update(rejected_decision=decision, checker_feedback=trace["initial_guard"])
             decision = self.ask("Coordinator: repair the rejected decision using checker feedback", context, PLAN_SCHEMA)
             trace["recovery"] = decision
-        check = guard(state, decision["plan_id"]) if decision["plan_id"] else None
+        check = guard(state, decision["plan_id"]) if decision["plan_id"] is not None else None
         trace.update(final_decision=decision, final_guard=check,
                      delivered_plan_id=decision["plan_id"] if check and check["allowed"] else None,
                      request_hashes=list(self.requests))

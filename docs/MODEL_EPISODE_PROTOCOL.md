@@ -6,6 +6,14 @@ its final recommendation. The controller must not silently substitute the exact
 finite solver for a fallible model at termination. Finalization work is recorded
 separately and also included in the evaluator's total work.
 
+Search recovery also uses the model evaluator's actual proposal. A structural
+solver's ability to find an admissible plan must not suppress search when the
+model abstained. The recovery probe is included in the evaluator's work counts.
+Tests reproduced this failure for all five methods before the first paid
+sequential run; the shared implementation was then corrected. Empty string
+plan identifiers enter the ordinary unknown-plan guard and bounded recovery,
+rather than crashing before the final checker.
+
 Before inspecting DeepSeek's model-VOI results, GPT-6 Luna and DeepSeek V4 Pro
 0813 were selected as two accessible families for this integration stage. This
 is a development choice, not a frozen paper model roster. The initial run uses

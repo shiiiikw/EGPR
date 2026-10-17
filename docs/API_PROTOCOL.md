@@ -55,23 +55,32 @@ failures while remaining inconclusive about small quality losses. Repeated seeds
 or cached responses do not increase the number of independent source groups.
 Current P equals generic B3; model breadth does not establish algorithm novelty.
 
-The three completed development configurations are GPT-6 Luna, dated GPT-4.1
-Mini and GPT-6.1 Sol. GPT-4.1 Mini is deprecated in current documentation and
-serves only as a development comparison. Current-family replacements will be
-frozen before the main study. The four configured Together candidates are
-Qwen3.5-9B, MiniMax M3, DeepSeek V4 Pro 0813 and GPT-OSS 120B; availability is not
-the same as a completed experiment.
+Seven configurations have completed the four-state development comparison:
+GPT-6 Luna, dated GPT-4.1 Mini, GPT-6.1 Sol, Qwen3.5-9B, MiniMax M3,
+DeepSeek V4 Pro 0813 and GPT-OSS 120B. GPT-4.1 Mini is deprecated in current
+documentation and remains a development comparison. Luna and DeepSeek were
+selected for the next sequential integration before inspecting DeepSeek's VOI
+results; the formal primary roster is not yet frozen. Generation settings and
+output caps differ by model and are recorded, so this is not a controlled study
+of architecture alone. The Qwen 1,536-token variant is a sensitivity setting,
+not an eighth foundation model. See the [paired results](../reports/model_voi_analysis_v0_10/table.md).
 
 Together metadata retrieval initially returned HTTP 403 with the standard
 library transport. Its official SDK 2.41.0 successfully listed models, so the
-transport now uses that SDK with automatic retries disabled. After the user
-reported replenishing credits and more than five minutes passed since the first
-402, one Qwen three-role case completed. The next request again returned
-HTTP 402 `credit_limit`. Every attempt and reservation is retained; the shared
-paid queue is blocked pending external billing resolution. An authenticated
-identity check succeeded, but the beta billing-usage endpoint returned 404.
-No replacement API key or larger experiment budget is inferred to be necessary.
-We do not silently switch providers after a block.
+transport uses that SDK with automatic retries disabled. Earlier HTTP 402
+`credit_limit` failures remain recorded. The replacement credential supplied by
+the user then passed two diagnostic cases on each of the four Together models.
+No credential is stored in this repository.
+
+The first model-VOI queue completed Qwen and stopped on a MiniMax HTTP 429
+`rate_limit`. This was a transient request-rate error. After a recorded cooldown,
+the operator explicitly resumed with two-second request-start spacing. Failed
+receipts and unresolved cost reservations were retained; successful exact
+requests were reused. Ordinary model-output failures are never resampled.
+The new queue uses the original model roster, states and replicate identity.
+Rate-limit response headers are recorded with an allowlist; authorization and
+cookie headers are excluded. No larger experiment budget or provider switch
+was needed.
 
 ## Cache and accounting
 

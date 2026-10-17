@@ -1,0 +1,182 @@
+{
+  "scope": "unique requests used by complete B2 development evaluations; not online task success rates",
+  "source_runs": [
+    {
+      "run": "model_voi_all_v0_10_replay",
+      "trace_sha256": "47cc3ddadcc34ceccc838ae8da1db4174f632ac6507abbb050f46ea4569411a3"
+    }
+  ],
+  "ledger_sha256": "c6fb5f71c98933cfb6eb10f235e833d76d0dfef33ae7b09e7337d07ddacc9842",
+  "models": {
+    "MiniMaxAI/MiniMax-M3": {
+      "unique_B2_requests": 154,
+      "configured_output_cap": 768,
+      "finish_reasons": {
+        "stop": 153,
+        "length": 1
+      },
+      "completion_parse_outcomes": {
+        "parsed_object": 153,
+        "completion_parse_error": 1
+      },
+      "reported_tokens": {
+        "prompt_tokens": 164566,
+        "prompt_tokens_receipts": 154,
+        "completion_tokens": 21661,
+        "completion_tokens_receipts": 154
+      },
+      "maximum_reported_completion_tokens": 768,
+      "terminal_counts": {
+        "terminal_evaluations": 52,
+        "model_response_errors": 1,
+        "no_delivery": 26
+      }
+    },
+    "Qwen/Qwen3.5-9B": {
+      "unique_B2_requests": 128,
+      "configured_output_cap": 768,
+      "finish_reasons": {
+        "stop": 113,
+        "length": 15
+      },
+      "completion_parse_outcomes": {
+        "parsed_object": 113,
+        "completion_parse_error": 15
+      },
+      "reported_tokens": {
+        "prompt_tokens": 131323,
+        "prompt_tokens_receipts": 128,
+        "completion_tokens": 38912,
+        "completion_tokens_receipts": 128,
+        "reasoning_tokens_reported": 0,
+        "reasoning_token_receipts": 128
+      },
+      "maximum_reported_completion_tokens": 768,
+      "terminal_counts": {
+        "terminal_evaluations": 52,
+        "model_response_errors": 15,
+        "no_delivery": 29
+      }
+    },
+    "deepseek-ai/DeepSeek-V4-Pro-0813": {
+      "unique_B2_requests": 156,
+      "configured_output_cap": 768,
+      "finish_reasons": {
+        "stop": 156
+      },
+      "completion_parse_outcomes": {
+        "parsed_object": 156
+      },
+      "reported_tokens": {
+        "prompt_tokens": 142289,
+        "prompt_tokens_receipts": 156,
+        "completion_tokens": 10593,
+        "completion_tokens_receipts": 156
+      },
+      "maximum_reported_completion_tokens": 223,
+      "terminal_counts": {
+        "terminal_evaluations": 52,
+        "model_response_errors": 0,
+        "no_delivery": 9
+      }
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "unique_B2_requests": 171,
+      "configured_output_cap": 768,
+      "finish_reasons": {
+        "stop": 171
+      },
+      "completion_parse_outcomes": {
+        "parsed_object": 171
+      },
+      "reported_tokens": {
+        "prompt_tokens": 155571,
+        "prompt_tokens_receipts": 171,
+        "completion_tokens": 13823,
+        "completion_tokens_receipts": 171,
+        "reasoning_tokens_reported": 0,
+        "reasoning_token_receipts": 171
+      },
+      "maximum_reported_completion_tokens": 317,
+      "terminal_counts": {
+        "terminal_evaluations": 52,
+        "model_response_errors": 0,
+        "no_delivery": 23
+      }
+    },
+    "gpt-6-luna": {
+      "unique_B2_requests": 157,
+      "configured_output_cap": 768,
+      "finish_reasons": {
+        "stop": 157
+      },
+      "completion_parse_outcomes": {
+        "parsed_object": 157
+      },
+      "reported_tokens": {
+        "prompt_tokens": 137003,
+        "prompt_tokens_receipts": 157,
+        "completion_tokens": 10646,
+        "completion_tokens_receipts": 157,
+        "reasoning_tokens_reported": 0,
+        "reasoning_token_receipts": 157
+      },
+      "maximum_reported_completion_tokens": 185,
+      "terminal_counts": {
+        "terminal_evaluations": 52,
+        "model_response_errors": 0,
+        "no_delivery": 2
+      }
+    },
+    "gpt-6.1-sol": {
+      "unique_B2_requests": 156,
+      "configured_output_cap": 3072,
+      "finish_reasons": {
+        "stop": 156
+      },
+      "completion_parse_outcomes": {
+        "parsed_object": 156
+      },
+      "reported_tokens": {
+        "prompt_tokens": 132912,
+        "prompt_tokens_receipts": 156,
+        "completion_tokens": 7516,
+        "completion_tokens_receipts": 156,
+        "reasoning_tokens_reported": 0,
+        "reasoning_token_receipts": 156
+      },
+      "maximum_reported_completion_tokens": 80,
+      "terminal_counts": {
+        "terminal_evaluations": 52,
+        "model_response_errors": 0,
+        "no_delivery": 0
+      }
+    },
+    "openai/gpt-oss-120b": {
+      "unique_B2_requests": 156,
+      "configured_output_cap": 3072,
+      "finish_reasons": {
+        "stop": 156
+      },
+      "completion_parse_outcomes": {
+        "parsed_object": 156
+      },
+      "reported_tokens": {
+        "prompt_tokens": 136473,
+        "prompt_tokens_receipts": 156,
+        "completion_tokens": 27706,
+        "completion_tokens_receipts": 156,
+        "reasoning_tokens_reported": 19339,
+        "reasoning_token_receipts": 156
+      },
+      "maximum_reported_completion_tokens": 378,
+      "terminal_counts": {
+        "terminal_evaluations": 52,
+        "model_response_errors": 0,
+        "no_delivery": 2
+      }
+    }
+  },
+  "raw_responses_published": false,
+  "parser_note": "A parsed object is not necessarily a valid role output or supported plan; terminal errors and no-delivery are separate."
+}

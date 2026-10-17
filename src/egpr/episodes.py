@@ -96,8 +96,11 @@ def run_episode(state: State, queries: tuple[Query, ...], environment: Controlle
             information += 1
             cost += query.cost
             continue
-        supported = Evaluator().terminal(state)[1]
-        if decision.selected == "STOP" and supported is None and searches < budget.search_actions:
+        # Search recovery depends on this evaluator's actual delivery. A finite
+        # solver finding an admissible plan cannot stand in for a fallible model.
+        # The probe's work is included in the common evaluator totals.
+        selected_plan = controller.evaluator.terminal(state)[1] if decision.selected == "STOP" else None
+        if decision.selected == "STOP" and selected_plan is None and searches < budget.search_actions:
             batch = environment.search()
             searches += 1  # Empty search results still consume a tool action.
             if batch is not None:
