@@ -1,0 +1,171 @@
+{
+  "base_model": "Qwen/Qwen3.5-9B",
+  "base_model_count": 1,
+  "configurations": {
+    "Qwen/Qwen3.5-9B": {
+      "settings": {
+        "provider": "together",
+        "generation": {
+          "max_tokens": 768,
+          "temperature": 0,
+          "reasoning": {
+            "enabled": false
+          }
+        },
+        "output_style": "original"
+      },
+      "states": 4,
+      "methods": {
+        "B1": {
+          "requests_summed_over_states": 128,
+          "logical_usd": "0.03205291"
+        },
+        "B2": {
+          "requests_summed_over_states": 128,
+          "logical_usd": "0.03205291"
+        },
+        "B3": {
+          "requests_summed_over_states": 73,
+          "logical_usd": "0.01772905"
+        },
+        "A1": {
+          "requests_summed_over_states": 73,
+          "logical_usd": "0.01772905"
+        },
+        "P": {
+          "requests_summed_over_states": 73,
+          "logical_usd": "0.01772905"
+        }
+      },
+      "B2_terminals": {
+        "evaluations": 52,
+        "response_errors": 15,
+        "no_delivery": 29
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      }
+    },
+    "Qwen/Qwen3.5-9B-cap1536": {
+      "settings": {
+        "provider": "together",
+        "generation": {
+          "max_tokens": 1536,
+          "temperature": 0,
+          "reasoning": {
+            "enabled": false
+          }
+        },
+        "output_style": "original"
+      },
+      "states": 4,
+      "methods": {
+        "B1": {
+          "requests_summed_over_states": 130,
+          "logical_usd": "0.03649317"
+        },
+        "B2": {
+          "requests_summed_over_states": 130,
+          "logical_usd": "0.03649317"
+        },
+        "B3": {
+          "requests_summed_over_states": 76,
+          "logical_usd": "0.01912922"
+        },
+        "A1": {
+          "requests_summed_over_states": 76,
+          "logical_usd": "0.01912922"
+        },
+        "P": {
+          "requests_summed_over_states": 76,
+          "logical_usd": "0.01912922"
+        }
+      },
+      "B2_terminals": {
+        "evaluations": 52,
+        "response_errors": 14,
+        "no_delivery": 31
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      }
+    },
+    "Qwen/Qwen3.5-9B-concise-v1": {
+      "settings": {
+        "provider": "together",
+        "generation": {
+          "max_tokens": 768,
+          "temperature": 0,
+          "reasoning": {
+            "enabled": false
+          }
+        },
+        "output_style": "concise-v1"
+      },
+      "states": 4,
+      "methods": {
+        "B1": {
+          "requests_summed_over_states": 156,
+          "logical_usd": "0.02441653"
+        },
+        "B2": {
+          "requests_summed_over_states": 156,
+          "logical_usd": "0.02441653"
+        },
+        "B3": {
+          "requests_summed_over_states": 102,
+          "logical_usd": "0.01584778"
+        },
+        "A1": {
+          "requests_summed_over_states": 102,
+          "logical_usd": "0.01584778"
+        },
+        "P": {
+          "requests_summed_over_states": 102,
+          "logical_usd": "0.01584778"
+        }
+      },
+      "B2_terminals": {
+        "evaluations": 52,
+        "response_errors": 0,
+        "no_delivery": 46
+      },
+      "audit_errors": {
+        "action_disagreements": 0,
+        "bound_violations": 0,
+        "false_pruning": 0
+      }
+    }
+  },
+  "sources": [
+    {
+      "run": "model_voi_all_v0_10_replay",
+      "input_sha256": {
+        "manifest.json": "01c2b1422731deba7f2b14bfeed34c6f2e0d2d24b8623620fe76c4d18e2a5028",
+        "summary.json": "288ad8ac915ceca021ddb921c3d476f137e550373ccacdc7606b6f2960c3ae9c",
+        "traces.jsonl": "47cc3ddadcc34ceccc838ae8da1db4174f632ac6507abbb050f46ea4569411a3"
+      }
+    },
+    {
+      "run": "model_voi_qwen_cap1536_v0_10",
+      "input_sha256": {
+        "manifest.json": "0de55d54513e3ec2d5cdef1f10928c346c366a7611f1427981fc9b0fc27548b0",
+        "summary.json": "ca8049bfb75240426e6ce9959644a98b4f3867ba207bae858dbf85c23f411abf",
+        "traces.jsonl": "433e3c7ef7469ce96b40fce38c7175d71211c20cc3b21480ca260bf0fb7a6c00"
+      }
+    },
+    {
+      "run": "model_voi_qwen_concise_v0_11",
+      "input_sha256": {
+        "manifest.json": "f22bd646e43343494221334888a378a89151aaae0693db78680f853384916081",
+        "summary.json": "83315854ae47ff74d6572373a4258e285937bb19d9f0da87eca48e379580f8f3",
+        "traces.jsonl": "051c8961d83609df8362e8b16375a4bbd324126d59d675c4a8962f4c19831095"
+      }
+    }
+  ],
+  "scope": "Paired development sensitivity; settings and cached replays are not independent cases or additional base models."
+}

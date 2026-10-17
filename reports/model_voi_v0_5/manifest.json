@@ -1,0 +1,160 @@
+{
+  "source_hashes": {
+    "configs/offline_v0.json": "e7eac484eec65b64927878203b3688794ebf9beb6bbebd17d771023beb941872",
+    "docs/OFFLINE_PROTOCOL.md": "143cfde60ded2a7c3334406493a24d65f796e5a0a000eed94611a64668c746ad",
+    "scripts/analyze_offline.py": "572a4df10bee37f81149bf39f4985728c27c5a4c1a043d153132d34f0b6201d0",
+    "scripts/qualify_foodpath.py": "030c078cf75e7e802f969857563d11ad5ed9225fd1c3ea0d72a0e0b168644a15",
+    "scripts/run_episodes.py": "1e066e805ba4f26c6bbd682eaf23f0bf9409307c2d7cb63445ebdf6dcd883912",
+    "scripts/run_model_voi.py": "c8faf3d798438cbf53f60471092972f9c5545b6e9d8c2ce607a413e304f9ac0a",
+    "scripts/run_offline.py": "9a42559f5adb421bcf4c3d1d67a5ba98c78cc18bc3ed9cd05ff628ebfea71c24",
+    "scripts/run_role_pilot.py": "0299f76d0d6e6c548120ac5ecb2b5524892080e7420253d570784a98c4e654c5",
+    "src/egpr/__init__.py": "2ba03b98f0d9c8e5809270d52c3c66563523ee88f1f7d4912caaa48bcc65a2ef",
+    "src/egpr/api.py": "b4d77c14dacc710298e8096912a3f4db38c55c9de873169c73963cbcb89d06a7",
+    "src/egpr/episodes.py": "024b723f55e0b00d84086f3bc2cc50514914edbf29330cc38f99d45f0ccace48",
+    "src/egpr/fixtures.py": "e9e15452843d193e56fc7a88e722f721c401f617edd3f6de2a5b408fd6ca5566",
+    "src/egpr/ledger.py": "243e8a3c26e746ac611fb788e9d0a7d96ee5698b1a3d6313276aff26c2bbfede",
+    "src/egpr/mas.py": "5faa5dac6b4d196fe0a11caeedaa948779c510db05498a6c8dcfdba39383cdc3",
+    "src/egpr/model_voi.py": "682a6685a194a21a24653b34688923481d2d4d39d90231e0c9d720027a181546",
+    "src/egpr/schema.py": "44ec5cb3e3e2e3ae24e85c589ef616804c55e41bbc255dedc4ee28c9229a9cf3",
+    "src/egpr/solver.py": "b6867fb16f6bdcd921b4564a14be1fd2c128923ab58c637fd835e7a5c9086cfd",
+    "tests/test_api.py": "ce3d88337d12cd30162fcaa0590bb3358a7dc79b8d536ba1c94c1e86d0a9cb77",
+    "tests/test_core.py": "090c701862f362d550c91c4ebab14053baaa76418d8904687c6c990e0f6a9655",
+    "tests/test_episodes.py": "7222fe1ce0bd9ea5e7a96708275d52fd708f9a7be451ec54b904442be1c4727b",
+    "tests/test_ledger.py": "852a0157425a01bf49f1405557300ce7cf006d7841ccf9e73576a3caa32407ec",
+    "tests/test_mas.py": "3e4aa18e8dd2e04612f11889302eaa1a37b91d9e042d388ac6ca9d8d00de3ac2",
+    "tests/test_model_voi.py": "222d50fe280fd3242cd648aa59bc9502ce65b3cafa7b1ba4973b941ca3bb2909",
+    "uv.lock": "a2516e3d6b35da7313aca0ffd861c325e662e9df70daa9a65134063905a9e553"
+  },
+  "models": {
+    "gpt-6-luna": {
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "version_kind": "provider_alias",
+      "context_tokens": 1050000,
+      "generation": {
+        "max_completion_tokens": 768,
+        "reasoning_effort": "none",
+        "service_tier": "default"
+      },
+      "tariff": {
+        "input_per_million": "0.10",
+        "output_per_million": "0.50",
+        "cached_input_per_million": "0.01",
+        "cache_write_per_million": "0.125",
+        "long_context_threshold": 272000,
+        "long_input_multiplier": "2",
+        "long_output_multiplier": "1.5",
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+        "checked_at": "2026-10-17"
+      }
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "version_kind": "dated_snapshot",
+      "context_tokens": 1047576,
+      "generation": {
+        "max_completion_tokens": 768,
+        "temperature": 0,
+        "service_tier": "default"
+      },
+      "tariff": {
+        "input_per_million": "0.40",
+        "output_per_million": "1.60",
+        "cached_input_per_million": "0.10",
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+        "checked_at": "2026-10-17"
+      }
+    },
+    "gpt-6.1-sol": {
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "version_kind": "provider_alias",
+      "context_tokens": 1050000,
+      "generation": {
+        "max_completion_tokens": 3072,
+        "reasoning_effort": "low",
+        "service_tier": "default"
+      },
+      "tariff": {
+        "input_per_million": "2.00",
+        "output_per_million": "10.00",
+        "cached_input_per_million": "0.10",
+        "cache_write_per_million": "2.50",
+        "long_context_threshold": 272000,
+        "long_input_multiplier": "2",
+        "long_output_multiplier": "1.5",
+        "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "checked_at": "2026-10-17"
+      }
+    }
+  },
+  "bank": [
+    [
+      8,
+      4,
+      0.5,
+      13
+    ],
+    [
+      8,
+      4,
+      0.5,
+      37
+    ],
+    [
+      8,
+      4,
+      0.5,
+      73
+    ],
+    [
+      8,
+      4,
+      0.5,
+      101
+    ]
+  ],
+  "replicate_id": "model-voi-development-0",
+  "campaign": {
+    "campaign_id": "egpr-2026-10-17",
+    "authorized_total_usd": "200",
+    "initial_development_ceiling_usd": "10",
+    "authorization": "User explicitly approved US$200 in chat; first development phase capped at US$10.",
+    "ledger_path": "results/api_campaign/calls.jsonl",
+    "default_paid": false,
+    "currency": "USD",
+    "accounting": "Conservative usage-based estimates and unresolved reservations; actual provider bills recorded separately.",
+    "allocation_usd": {
+      "development": 10,
+      "two_primary_models_full_controls": 80,
+      "additional_family_breadth": 60,
+      "robustness_and_failure_audits": 30,
+      "unallocated_reserve": 20
+    },
+    "cached_calls_are_independent_replicates": false,
+    "automatic_model_fallback": false,
+    "automatic_network_retries": 0,
+    "selected_primary_models": [
+      "gpt-6-luna",
+      "gpt-4.1-mini-2025-04-14"
+    ],
+    "primary_selection_note": "Development candidates with listed access; replace deprecated GPT-4.1 with a current second family when that API becomes available. This is not yet a frozen paper model roster.",
+    "breadth_candidates": [
+      "gpt-6.1-sol",
+      "Qwen/Qwen3.5-9B",
+      "deepseek-ai/DeepSeek-V4.1-Flash",
+      "MiniMaxAI/MiniMax-M3",
+      "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+      "openai/gpt-oss-120b"
+    ],
+    "provider_status": {
+      "openai": "Model-list GET succeeded; paid inference availability not established by model listing.",
+      "together": "Metadata GET returned HTTP 403; keep disabled until access is resolved. No automatic retry."
+    }
+  },
+  "terminal_model": "fallible Planner/Reviewer/Coordinator plus guard; fixed nonnegative reward",
+  "guarantee": "conditional on frozen exact-request responses and declared finite belief, one step only",
+  "scope": "synthetic development same-state replay; not independent FoodPath effectiveness evidence",
+  "bounds": "zero lower terminal utility; structural supported-plan maximum upper bound"
+}

@@ -1,0 +1,12 @@
+{
+  "action_disagreements": 0,
+  "api_calls": 0,
+  "bound_violations": 0,
+  "certificates": 9906,
+  "false_pruning": 0,
+  "incremental_divergences": 0,
+  "max_action_regret": 0.0,
+  "passed": true,
+  "query_bounds": 3780,
+  "states": 540
+}

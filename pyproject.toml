@@ -1,0 +1,19 @@
+[project]
+name = "egpr"
+version = "0.1.0"
+description = "Evidence-grounded plan revision: auditable finite-state research core"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+together = ["together==2.41.0"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.uv]
+package = false

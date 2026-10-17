@@ -1,0 +1,65 @@
+{
+  "work_by_policy": {
+    "B1": {
+      "bound_branches": 0,
+      "bound_plan_visits": 0,
+      "branch_evaluations": 5889,
+      "cache_hits": 0,
+      "cache_lookups": 0,
+      "certificates": 0,
+      "constraint_checks": 184459,
+      "plan_evaluations": 14870,
+      "posterior_updates": 5889,
+      "terminal_evaluations": 6283
+    },
+    "B2": {
+      "bound_branches": 0,
+      "bound_plan_visits": 0,
+      "branch_evaluations": 5889,
+      "cache_hits": 108158,
+      "cache_lookups": 128654,
+      "certificates": 0,
+      "constraint_checks": 41697,
+      "plan_evaluations": 1533,
+      "posterior_updates": 5889,
+      "terminal_evaluations": 6283
+    },
+    "B3": {
+      "bound_branches": 5889,
+      "bound_plan_visits": 21528,
+      "branch_evaluations": 0,
+      "cache_hits": 10868,
+      "cache_lookups": 16022,
+      "certificates": 1726,
+      "constraint_checks": 8407,
+      "plan_evaluations": 480,
+      "posterior_updates": 0,
+      "terminal_evaluations": 394
+    },
+    "A1": {
+      "bound_branches": 5889,
+      "bound_plan_visits": 21528,
+      "branch_evaluations": 0,
+      "cache_hits": 0,
+      "cache_lookups": 0,
+      "certificates": 1726,
+      "constraint_checks": 24914,
+      "plan_evaluations": 902,
+      "posterior_updates": 0,
+      "terminal_evaluations": 394
+    },
+    "P": {
+      "bound_branches": 5889,
+      "bound_plan_visits": 21528,
+      "branch_evaluations": 0,
+      "cache_hits": 10868,
+      "cache_lookups": 16022,
+      "certificates": 1726,
+      "constraint_checks": 8407,
+      "plan_evaluations": 480,
+      "posterior_updates": 0,
+      "terminal_evaluations": 394
+    }
+  },
+  "note": "Summed from DECIDE records; bound traversal is not free even where exact branches are zero."
+}

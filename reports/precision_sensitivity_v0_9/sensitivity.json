@@ -1,0 +1,43 @@
+{
+  "scope": "illustrative sample-precision sensitivity; not achieved power or FoodPath noninferiority evidence",
+  "assumption": "independent Bernoulli loss events with zero observed events and a fixed sample size",
+  "confidence_one_sided": 0.95,
+  "illustrative_loss_margin": 0.03,
+  "minimum_n_for_zero_event_upper_bound_at_most_margin": 99,
+  "rows": [
+    {
+      "independent_binary_units": 1,
+      "zero_observed_losses_one_sided_upper_bound": 0.95
+    },
+    {
+      "independent_binary_units": 9,
+      "zero_observed_losses_one_sided_upper_bound": 0.28312883556311347
+    },
+    {
+      "independent_binary_units": 34,
+      "zero_observed_losses_one_sided_upper_bound": 0.08433964335062537
+    },
+    {
+      "independent_binary_units": 43,
+      "zero_observed_losses_one_sided_upper_bound": 0.06729675341386782
+    },
+    {
+      "independent_binary_units": 59,
+      "zero_observed_losses_one_sided_upper_bound": 0.04950760988822693
+    },
+    {
+      "independent_binary_units": 99,
+      "zero_observed_losses_one_sided_upper_bound": 0.029806673773350886
+    },
+    {
+      "independent_binary_units": 150,
+      "zero_observed_losses_one_sided_upper_bound": 0.01977343816450844
+    }
+  ],
+  "limitations": [
+    "Source groups with multiple cases and unequal dependence are not independent Bernoulli trials by default",
+    "Actual paired quality differences include both gains and losses; this is not their full confidence interval",
+    "Development states, model variants, counterfactual branches and cached replays do not multiply independent source groups",
+    "The stricter initial-candidate provenance audit forms one connected group, so unseen-provider generalization is not established"
+  ]
+}

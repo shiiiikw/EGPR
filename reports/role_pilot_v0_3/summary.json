@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "completed_cases": 16,
+  "correct_cases": 16,
+  "new_network_attempts": 48,
+  "local_cache_reuses": 0,
+  "campaign_occupancy_usd": "0.271383375",
+  "actual_billed_usd": null,
+  "billing_note": "Usage estimate plus unresolved reservations; no invoice received",
+  "per_model": {
+    "gpt-6-luna": {
+      "completed": 8,
+      "correct": 8
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "completed": 8,
+      "correct": 8
+    }
+  }
+}

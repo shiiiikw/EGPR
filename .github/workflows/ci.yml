@@ -1,0 +1,17 @@
+name: Offline correctness
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff # v6
+        with:
+          version: "0.10.2"
+          python-version: "3.13"
+      - run: uv sync --frozen --all-extras
+      - run: uv run pytest -q
+      - run: uv run python scripts/run_offline.py --smoke --output results/ci-smoke
+      - run: uv run python scripts/run_episodes.py --output results/ci-episodes

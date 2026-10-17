@@ -1,0 +1,15 @@
+{
+  "at_utc": "2026-10-17T04:06:14.290049+00:00",
+  "authorized_total_usd": "200",
+  "development_ceiling_usd": "10",
+  "network_attempts": 538,
+  "successful_inference_responses": 535,
+  "usage_based_estimate_usd": "0.522802370",
+  "unreconciled_reservations_usd": "0.352588960",
+  "budget_occupancy_usd": "0.875391330",
+  "actual_billed_usd": null,
+  "access_blocked": true,
+  "access_diagnostic": "Together Qwen completed three successful role calls, then HTTP 402 credit_limit. Identity GET 200; billing-usage beta GET 404.",
+  "ledger_sha256": "b53027b1cbde7f84cc8684ef154cea72c94780a3bac92e3fb0bb316164677a9b",
+  "privacy": "Raw responses, credentials, organization identifiers and private disclosures remain local and ignored."
+}

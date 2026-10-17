@@ -1,0 +1,20 @@
+{
+  "version": "egpr-finite-v0",
+  "plan_source_commit": "d561304",
+  "allow_paid_calls": false,
+  "max_new_paid_usd": 0,
+  "plans": [8, 32, 128],
+  "unknown_conditions": [4, 8, 12],
+  "anchor_reuse": [0, 0.25, 0.5, 0.75],
+  "seeds": [13, 37, 73, 101, 137],
+  "policies": ["B1", "B2", "B3", "A1", "P"],
+  "public_states_per_instance": 3,
+  "one_step_only": true,
+  "resolution_probability": "4/5",
+  "utility": "supported plan fixed reward plus optional Boolean preference bonus; unresolved/conditional=0",
+  "tie_break": "STOP first, then query ID; no epsilon pruning",
+  "source_data": "controlled fixtures only",
+  "holdout_claim": "none; algorithm diagnostic, not population inference",
+  "B3_P_relationship": "same generic structural interval search and dependency cache in v0",
+  "memory": "separate optional traced-allocations diagnostic; primary timing uninstrumented"
+}

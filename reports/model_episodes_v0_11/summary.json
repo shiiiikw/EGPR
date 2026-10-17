@@ -1,0 +1,1177 @@
+{
+  "status": "complete",
+  "completed_model_cases": 4,
+  "groups": [
+    {
+      "model": "gpt-6-luna",
+      "setting": [
+        8,
+        4,
+        0.5,
+        13
+      ],
+      "policies": {
+        "B2": {
+          "delivered_plan_id": "p006",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "9/5",
+          "termination": "one_step_stop",
+          "information_actions": 2,
+          "ask_user_actions": 1,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 27,
+          "unique_model_requests": 86,
+          "undiscounted_logical_usd": "0.0116137",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 28,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "ASK_USER",
+              "query_id": "q01",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p006",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 32,
+            "branch_evaluations": 27,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 4,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 27,
+            "certificates": 0
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "P": {
+          "delivered_plan_id": "p006",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "9/5",
+          "termination": "one_step_stop",
+          "information_actions": 2,
+          "ask_user_actions": 1,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 6,
+          "unique_model_requests": 21,
+          "undiscounted_logical_usd": "0.0026813",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 7,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "ASK_USER",
+              "query_id": "q01",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p006",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 11,
+            "branch_evaluations": 6,
+            "plan_evaluations": 0,
+            "constraint_checks": 26,
+            "cache_lookups": 24,
+            "cache_hits": 13,
+            "bound_plan_visits": 80,
+            "bound_branches": 27,
+            "posterior_updates": 6,
+            "certificates": 7
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "B3": {
+          "delivered_plan_id": "p006",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "9/5",
+          "termination": "one_step_stop",
+          "information_actions": 2,
+          "ask_user_actions": 1,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 6,
+          "unique_model_requests": 21,
+          "undiscounted_logical_usd": "0.0026813",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 7,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "ASK_USER",
+              "query_id": "q01",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p006",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 11,
+            "branch_evaluations": 6,
+            "plan_evaluations": 0,
+            "constraint_checks": 26,
+            "cache_lookups": 24,
+            "cache_hits": 13,
+            "bound_plan_visits": 80,
+            "bound_branches": 27,
+            "posterior_updates": 6,
+            "certificates": 7
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "A1": {
+          "delivered_plan_id": "p006",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "9/5",
+          "termination": "one_step_stop",
+          "information_actions": 2,
+          "ask_user_actions": 1,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 6,
+          "unique_model_requests": 21,
+          "undiscounted_logical_usd": "0.0026813",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 11,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "ASK_USER",
+              "query_id": "q01",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p006",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 11,
+            "branch_evaluations": 6,
+            "plan_evaluations": 0,
+            "constraint_checks": 36,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 80,
+            "bound_branches": 27,
+            "posterior_updates": 6,
+            "certificates": 7
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "B1": {
+          "delivered_plan_id": "p006",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "9/5",
+          "termination": "one_step_stop",
+          "information_actions": 2,
+          "ask_user_actions": 1,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 27,
+          "unique_model_requests": 86,
+          "undiscounted_logical_usd": "0.0116137",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 32,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "ASK_USER",
+              "query_id": "q01",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p006",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 32,
+            "branch_evaluations": 27,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 27,
+            "certificates": 0
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        }
+      },
+      "P_B2_trajectory_equal": true,
+      "P_B3_trajectory_equal": true,
+      "unsupported_delivery": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "setting": [
+        8,
+        4,
+        0.5,
+        37
+      ],
+      "policies": {
+        "B3": {
+          "delivered_plan_id": "p001",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "2",
+          "termination": "one_step_stop",
+          "information_actions": 1,
+          "ask_user_actions": 0,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 3,
+          "unique_model_requests": 12,
+          "undiscounted_logical_usd": "0.0013641",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 4,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p001",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 7,
+            "branch_evaluations": 3,
+            "plan_evaluations": 0,
+            "constraint_checks": 21,
+            "cache_lookups": 16,
+            "cache_hits": 6,
+            "bound_plan_visits": 60,
+            "bound_branches": 21,
+            "posterior_updates": 3,
+            "certificates": 6
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "P": {
+          "delivered_plan_id": "p001",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "2",
+          "termination": "one_step_stop",
+          "information_actions": 1,
+          "ask_user_actions": 0,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 3,
+          "unique_model_requests": 12,
+          "undiscounted_logical_usd": "0.0013641",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 4,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p001",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 7,
+            "branch_evaluations": 3,
+            "plan_evaluations": 0,
+            "constraint_checks": 21,
+            "cache_lookups": 16,
+            "cache_hits": 6,
+            "bound_plan_visits": 60,
+            "bound_branches": 21,
+            "posterior_updates": 3,
+            "certificates": 6
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "B2": {
+          "delivered_plan_id": "p001",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "2",
+          "termination": "one_step_stop",
+          "information_actions": 1,
+          "ask_user_actions": 0,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 21,
+          "unique_model_requests": 66,
+          "undiscounted_logical_usd": "0.0085373",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 22,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p001",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 25,
+            "branch_evaluations": 21,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 3,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 21,
+            "certificates": 0
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "A1": {
+          "delivered_plan_id": "p001",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "2",
+          "termination": "one_step_stop",
+          "information_actions": 1,
+          "ask_user_actions": 0,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 3,
+          "unique_model_requests": 12,
+          "undiscounted_logical_usd": "0.0013641",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 7,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p001",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 7,
+            "branch_evaluations": 3,
+            "plan_evaluations": 0,
+            "constraint_checks": 24,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 60,
+            "bound_branches": 21,
+            "posterior_updates": 3,
+            "certificates": 6
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "B1": {
+          "delivered_plan_id": "p001",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "2",
+          "termination": "one_step_stop",
+          "information_actions": 1,
+          "ask_user_actions": 0,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 21,
+          "unique_model_requests": 66,
+          "undiscounted_logical_usd": "0.0085373",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 25,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p001",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 25,
+            "branch_evaluations": 21,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 21,
+            "certificates": 0
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        }
+      },
+      "P_B2_trajectory_equal": true,
+      "P_B3_trajectory_equal": true,
+      "unsupported_delivery": 0
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "setting": [
+        8,
+        4,
+        0.5,
+        13
+      ],
+      "policies": {
+        "B2": {
+          "delivered_plan_id": "p006",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "9/5",
+          "termination": "one_step_stop",
+          "information_actions": 2,
+          "ask_user_actions": 1,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 27,
+          "unique_model_requests": 84,
+          "undiscounted_logical_usd": "0.13764168",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 28,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "ASK_USER",
+              "query_id": "q01",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p006",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 32,
+            "branch_evaluations": 27,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 4,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 27,
+            "certificates": 0
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "P": {
+          "delivered_plan_id": "p006",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "9/5",
+          "termination": "one_step_stop",
+          "information_actions": 2,
+          "ask_user_actions": 1,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 6,
+          "unique_model_requests": 21,
+          "undiscounted_logical_usd": "0.03249312",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 7,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "ASK_USER",
+              "query_id": "q01",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p006",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 11,
+            "branch_evaluations": 6,
+            "plan_evaluations": 0,
+            "constraint_checks": 26,
+            "cache_lookups": 24,
+            "cache_hits": 13,
+            "bound_plan_visits": 80,
+            "bound_branches": 27,
+            "posterior_updates": 6,
+            "certificates": 7
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "B1": {
+          "delivered_plan_id": "p006",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "9/5",
+          "termination": "one_step_stop",
+          "information_actions": 2,
+          "ask_user_actions": 1,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 27,
+          "unique_model_requests": 84,
+          "undiscounted_logical_usd": "0.13764168",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 32,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "ASK_USER",
+              "query_id": "q01",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p006",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 32,
+            "branch_evaluations": 27,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 27,
+            "certificates": 0
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "A1": {
+          "delivered_plan_id": "p006",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "9/5",
+          "termination": "one_step_stop",
+          "information_actions": 2,
+          "ask_user_actions": 1,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 6,
+          "unique_model_requests": 21,
+          "undiscounted_logical_usd": "0.03249312",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 11,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "ASK_USER",
+              "query_id": "q01",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p006",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 11,
+            "branch_evaluations": 6,
+            "plan_evaluations": 0,
+            "constraint_checks": 36,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 80,
+            "bound_branches": 27,
+            "posterior_updates": 6,
+            "certificates": 7
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "B3": {
+          "delivered_plan_id": "p006",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "9/5",
+          "termination": "one_step_stop",
+          "information_actions": 2,
+          "ask_user_actions": 1,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 6,
+          "unique_model_requests": 21,
+          "undiscounted_logical_usd": "0.03249312",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 7,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "ASK_USER",
+              "query_id": "q01",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p006",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 11,
+            "branch_evaluations": 6,
+            "plan_evaluations": 0,
+            "constraint_checks": 26,
+            "cache_lookups": 24,
+            "cache_hits": 13,
+            "bound_plan_visits": 80,
+            "bound_branches": 27,
+            "posterior_updates": 6,
+            "certificates": 7
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        }
+      },
+      "P_B2_trajectory_equal": true,
+      "P_B3_trajectory_equal": true,
+      "unsupported_delivery": 0
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "setting": [
+        8,
+        4,
+        0.5,
+        37
+      ],
+      "policies": {
+        "B1": {
+          "delivered_plan_id": "p001",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "2",
+          "termination": "one_step_stop",
+          "information_actions": 1,
+          "ask_user_actions": 0,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 21,
+          "unique_model_requests": 66,
+          "undiscounted_logical_usd": "0.10371108",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 25,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p001",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 25,
+            "branch_evaluations": 21,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 21,
+            "certificates": 0
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "P": {
+          "delivered_plan_id": "p001",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "2",
+          "termination": "one_step_stop",
+          "information_actions": 1,
+          "ask_user_actions": 0,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 3,
+          "unique_model_requests": 12,
+          "undiscounted_logical_usd": "0.01738044",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 4,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p001",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 7,
+            "branch_evaluations": 3,
+            "plan_evaluations": 0,
+            "constraint_checks": 21,
+            "cache_lookups": 16,
+            "cache_hits": 6,
+            "bound_plan_visits": 60,
+            "bound_branches": 21,
+            "posterior_updates": 3,
+            "certificates": 6
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "B2": {
+          "delivered_plan_id": "p001",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "2",
+          "termination": "one_step_stop",
+          "information_actions": 1,
+          "ask_user_actions": 0,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 21,
+          "unique_model_requests": 66,
+          "undiscounted_logical_usd": "0.10371108",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 22,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p001",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 25,
+            "branch_evaluations": 21,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 3,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 21,
+            "certificates": 0
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "B3": {
+          "delivered_plan_id": "p001",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "2",
+          "termination": "one_step_stop",
+          "information_actions": 1,
+          "ask_user_actions": 0,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 3,
+          "unique_model_requests": 12,
+          "undiscounted_logical_usd": "0.01738044",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 4,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p001",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 7,
+            "branch_evaluations": 3,
+            "plan_evaluations": 0,
+            "constraint_checks": 21,
+            "cache_lookups": 16,
+            "cache_hits": 6,
+            "bound_plan_visits": 60,
+            "bound_branches": 21,
+            "posterior_updates": 3,
+            "certificates": 6
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 1,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        },
+        "A1": {
+          "delivered_plan_id": "p001",
+          "supported_completion": true,
+          "truth_correct": true,
+          "final_reward": "2",
+          "termination": "one_step_stop",
+          "information_actions": 1,
+          "ask_user_actions": 0,
+          "verify_source_actions": 1,
+          "search_actions": 0,
+          "counterfactual_branches": 3,
+          "unique_model_requests": 12,
+          "undiscounted_logical_usd": "0.01738044",
+          "unpriced_requests": 0,
+          "terminal_evaluations": 7,
+          "parse_failures": 0,
+          "public_actions": [
+            {
+              "kind": "VERIFY_SOURCE",
+              "query_id": "q00",
+              "observation": false
+            },
+            {
+              "kind": "RECOMMEND_SUPPORTED",
+              "proposal": "p001",
+              "reason": "one_step_stop"
+            }
+          ],
+          "work": {
+            "terminal_evaluations": 7,
+            "branch_evaluations": 3,
+            "plan_evaluations": 0,
+            "constraint_checks": 24,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 60,
+            "bound_branches": 21,
+            "posterior_updates": 3,
+            "certificates": 6
+          },
+          "finalization_work": {
+            "terminal_evaluations": 1,
+            "branch_evaluations": 0,
+            "plan_evaluations": 0,
+            "constraint_checks": 0,
+            "cache_lookups": 0,
+            "cache_hits": 0,
+            "bound_plan_visits": 0,
+            "bound_branches": 0,
+            "posterior_updates": 0,
+            "certificates": 0
+          }
+        }
+      },
+      "P_B2_trajectory_equal": true,
+      "P_B3_trajectory_equal": true,
+      "unsupported_delivery": 0
+    }
+  ],
+  "new_network_attempts": 145,
+  "local_cache_reuses": 741,
+  "campaign_occupancy_usd": "1.575775600",
+  "actual_billed_usd": null,
+  "scope": "controlled sequential integration with a supported fixture fallback; not FoodPath effectiveness"
+}

@@ -1,0 +1,147 @@
+{
+  "source_hashes": {
+    "configs/offline_v0.json": "e7eac484eec65b64927878203b3688794ebf9beb6bbebd17d771023beb941872",
+    "docs/OFFLINE_PROTOCOL.md": "143cfde60ded2a7c3334406493a24d65f796e5a0a000eed94611a64668c746ad",
+    "scripts/analyze_model_episodes.py": "7d35b320dc3396d5da4367e5d841f8ca2fd364add037e7660b2c6684f3f278e7",
+    "scripts/analyze_model_voi.py": "4d2c93b41e7e2b22e7dd7856063ecd7348609296ebc3ecfce1d417b6f8e0228d",
+    "scripts/analyze_offline.py": "de37a1d134a89b56e20ea4aef5604c6930306bd5ae3d9bae5c5b76fd5607ed71",
+    "scripts/audit_model_outputs.py": "e09bf24cfed9799fc40be5a38f35ba202443620cec6719c289f396b5c8015060",
+    "scripts/audit_native_user.py": "4d026dfb5044375b705c9b06397c96e9206f5f0c20029ce1ead5a4d9a7e0465f",
+    "scripts/campaign_checkpoint.py": "32886ef09c1c8058df2e84a51ffee2f9d0b52820ceac499e3e6fb6a32f0329ac",
+    "scripts/compare_model_settings.py": "8b52b1da92bd7f825874027b35dbc96094944af70126f3529cdc7b124c9e6552",
+    "scripts/precision_sensitivity.py": "9a8181f4ed29d98203dacb3b04152b741fcbd2d0f76eb8771604d18f5968889a",
+    "scripts/qualify_ask_before_plan.py": "cf01187618b5f6df04b99f96a6931f6483bac539d9adf0a63d5c6ad071db37ff",
+    "scripts/qualify_foodpath.py": "030c078cf75e7e802f969857563d11ad5ed9225fd1c3ea0d72a0e0b168644a15",
+    "scripts/run_episodes.py": "1e066e805ba4f26c6bbd682eaf23f0bf9409307c2d7cb63445ebdf6dcd883912",
+    "scripts/run_model_episodes.py": "ee0bc04169c30ba78fc9c6c3b8598133ab9a00b63c36a20c596934d177f47374",
+    "scripts/run_model_voi.py": "d18ff341f7075d7e0849cee4388294cbe3884b434b41d89289c38245238c55ca",
+    "scripts/run_offline.py": "9a42559f5adb421bcf4c3d1d67a5ba98c78cc18bc3ed9cd05ff628ebfea71c24",
+    "scripts/run_role_pilot.py": "25bc87fe821406bae206b7d6df8aa874af4d46d3fb4576fb7201e8e5a3539258",
+    "src/egpr/__init__.py": "2ba03b98f0d9c8e5809270d52c3c66563523ee88f1f7d4912caaa48bcc65a2ef",
+    "src/egpr/api.py": "52d6b4ab690915d01fd3055924e407c563021a943cafcd2a6fe92ef5cb4543ce",
+    "src/egpr/episodes.py": "44904a23c2c3fefb2901197e1752bff93ef225f327a3fa9f4f7274c3ea8db36a",
+    "src/egpr/fixtures.py": "e9e15452843d193e56fc7a88e722f721c401f617edd3f6de2a5b408fd6ca5566",
+    "src/egpr/ledger.py": "243e8a3c26e746ac611fb788e9d0a7d96ee5698b1a3d6313276aff26c2bbfede",
+    "src/egpr/mas.py": "7cc4fe5d99c17449352c43227b33ddc8cb51de2072faf4f46e72159fe66ded5a",
+    "src/egpr/model_voi.py": "682a6685a194a21a24653b34688923481d2d4d39d90231e0c9d720027a181546",
+    "src/egpr/native_adapter.py": "ba66a9a6d729614463fa7555b4f39dac7afaf211741135a83d717fc6477357c9",
+    "src/egpr/native_user.py": "66ea25c85b8e10cd4584e28f0c032575f7d6f95de4d74141f6568c620d91da4c",
+    "src/egpr/providers.py": "f43ebb0d67ac4882b772c5a78157565720c6f5bf6857080e624ffc3696fc07c7",
+    "src/egpr/schema.py": "44ec5cb3e3e2e3ae24e85c589ef616804c55e41bbc255dedc4ee28c9229a9cf3",
+    "src/egpr/solver.py": "b6867fb16f6bdcd921b4564a14be1fd2c128923ab58c637fd835e7a5c9086cfd",
+    "tests/test_api.py": "4754df3c288aa3c03a1344296da9c57e6d59acb6fac6d82049bd0962b6893a77",
+    "tests/test_core.py": "090c701862f362d550c91c4ebab14053baaa76418d8904687c6c990e0f6a9655",
+    "tests/test_empty_plan_recovery.py": "039336d216adccf5e49ce20a54a016c06c3a175b00c2fe052238e98208741431",
+    "tests/test_episodes.py": "7222fe1ce0bd9ea5e7a96708275d52fd708f9a7be451ec54b904442be1c4727b",
+    "tests/test_ledger.py": "852a0157425a01bf49f1405557300ce7cf006d7841ccf9e73576a3caa32407ec",
+    "tests/test_mas.py": "3e4aa18e8dd2e04612f11889302eaa1a37b91d9e042d388ac6ca9d8d00de3ac2",
+    "tests/test_model_episodes.py": "7155165afd0a91a3b94d8b643a41a05f3fb56813eca2bf3757c2b515f30f405a",
+    "tests/test_model_search.py": "d1db76fd3911da3666676f47f3503833b1f094732a67b6b1a2da69a3bda69e7c",
+    "tests/test_model_voi.py": "222d50fe280fd3242cd648aa59bc9502ce65b3cafa7b1ba4973b941ca3bb2909",
+    "tests/test_native_adapter.py": "02873fd60f01305c8a3adf5a71418a57a36f30de5a96c6c17d7c293b8be3d925",
+    "tests/test_native_user.py": "3f97e73f8dd2fe858397cb93655869c2a450af17587ffa6ef93103f768855da7",
+    "tests/test_output_style.py": "8f95bf219ee4ea46455711945397c5294d671c0ccaada17b0a3a831d151a45a6",
+    "tests/test_together.py": "c4309856c5fff4735cab41a3dd74c8dcfbd35adae2804bb882db3b2109b553bc",
+    "uv.lock": "d9f534a6a57b9afa94611f80ccab4fb3baf6e30e7ee8d2d31501f4eeb8c75d57"
+  },
+  "models": {
+    "Qwen/Qwen3.5-9B-concise-v1": {
+      "provider": "together",
+      "model": "Qwen/Qwen3.5-9B",
+      "version_kind": "provider_model_selector",
+      "backend": "together-sdk-2.41.0",
+      "context_tokens": 262144,
+      "generation": {
+        "max_tokens": 768,
+        "temperature": 0,
+        "reasoning": {
+          "enabled": false
+        }
+      },
+      "tariff": {
+        "input_per_million": "0.17",
+        "output_per_million": "0.25",
+        "cached_input_per_million": null,
+        "source_url": "https://docs.together.ai/docs/serverless/models",
+        "checked_at": "2026-10-17"
+      },
+      "output_style": "concise-v1",
+      "variant_note": "Development output-style diagnostic on all four paired states, original 768-token cap; not an additional foundation model."
+    }
+  },
+  "bank": [
+    [
+      8,
+      4,
+      0.5,
+      13
+    ],
+    [
+      8,
+      4,
+      0.5,
+      37
+    ],
+    [
+      8,
+      4,
+      0.5,
+      73
+    ],
+    [
+      8,
+      4,
+      0.5,
+      101
+    ]
+  ],
+  "replicate_id": "model-voi-development-0",
+  "campaign": {
+    "campaign_id": "egpr-2026-10-17",
+    "authorized_total_usd": "200",
+    "initial_development_ceiling_usd": "10",
+    "authorization": "User explicitly approved US$200 in chat; first development phase capped at US$10.",
+    "ledger_path": "results/api_campaign/calls.jsonl",
+    "default_paid": false,
+    "currency": "USD",
+    "accounting": "Conservative usage-based estimates and unresolved reservations; actual provider bills recorded separately.",
+    "allocation_usd": {
+      "development": 10,
+      "two_primary_models_full_controls": 80,
+      "additional_family_breadth": 60,
+      "robustness_and_failure_audits": 30,
+      "unallocated_reserve": 20
+    },
+    "cached_calls_are_independent_replicates": false,
+    "automatic_model_fallback": false,
+    "automatic_network_retries": 0,
+    "selected_primary_models": [
+      "gpt-6-luna",
+      "deepseek-ai/DeepSeek-V4-Pro-0813"
+    ],
+    "primary_selection_note": "Two accessible families for development integration, selected before inspecting DeepSeek VOI results; not a frozen paper model roster. Deprecated GPT-4.1 remains a reported development comparison.",
+    "breadth_candidates": [
+      "gpt-6.1-sol",
+      "Qwen/Qwen3.5-9B",
+      "MiniMaxAI/MiniMax-M3",
+      "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "openai/gpt-oss-120b"
+    ],
+    "provider_status": {
+      "openai": "Paid inference succeeded after the user replenished credits; budget and cached failure retained.",
+      "together": "Replacement credential passed four access gates and all 16 four-model VOI states. A transient MiniMax 429 was explicitly resumed after cooldown; two-second pacing is active. All prior failures and cost reservations retained; no automatic retries."
+    },
+    "provider_minimum_request_interval_seconds": {
+      "together": 2
+    },
+    "sequential_development_models": [
+      "gpt-6-luna",
+      "deepseek-ai/DeepSeek-V4-Pro-0813"
+    ],
+    "sequential_selection_note": "Two accessible families selected for sequential development before inspecting the DeepSeek model-VOI results; not a frozen paper roster."
+  },
+  "terminal_model": "fallible Planner/Reviewer/Coordinator plus guard; fixed nonnegative reward",
+  "guarantee": "conditional on frozen exact-request responses and declared finite belief, one step only",
+  "scope": "synthetic development same-state replay; not independent FoodPath effectiveness evidence",
+  "bounds": "zero lower terminal utility; structural supported-plan maximum upper bound"
+}

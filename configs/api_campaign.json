@@ -1,0 +1,44 @@
+{
+  "campaign_id": "egpr-2026-10-17",
+  "authorized_total_usd": "200",
+  "initial_development_ceiling_usd": "10",
+  "authorization": "User explicitly approved US$200 in chat; first development phase capped at US$10.",
+  "ledger_path": "results/api_campaign/calls.jsonl",
+  "default_paid": false,
+  "currency": "USD",
+  "accounting": "Conservative usage-based estimates and unresolved reservations; actual provider bills recorded separately.",
+  "allocation_usd": {
+    "development": 10,
+    "two_primary_models_full_controls": 80,
+    "additional_family_breadth": 60,
+    "robustness_and_failure_audits": 30,
+    "unallocated_reserve": 20
+  },
+  "cached_calls_are_independent_replicates": false,
+  "automatic_model_fallback": false,
+  "automatic_network_retries": 0,
+  "selected_primary_models": [
+    "gpt-6-luna",
+    "deepseek-ai/DeepSeek-V4-Pro-0813"
+  ],
+  "primary_selection_note": "Two accessible families for development integration, selected before inspecting DeepSeek VOI results; not a frozen paper model roster. Deprecated GPT-4.1 remains a reported development comparison.",
+  "breadth_candidates": [
+    "gpt-6.1-sol",
+    "Qwen/Qwen3.5-9B",
+    "MiniMaxAI/MiniMax-M3",
+    "deepseek-ai/DeepSeek-V4-Pro-0813",
+    "openai/gpt-oss-120b"
+  ],
+  "provider_status": {
+    "openai": "Paid inference succeeded after the user replenished credits; budget and cached failure retained.",
+    "together": "Replacement credential passed four access gates and all 16 four-model VOI states. A transient MiniMax 429 was explicitly resumed after cooldown; two-second pacing is active. All prior failures and cost reservations retained; no automatic retries."
+  },
+  "provider_minimum_request_interval_seconds": {
+    "together": 2
+  },
+  "sequential_development_models": [
+    "gpt-6-luna",
+    "deepseek-ai/DeepSeek-V4-Pro-0813"
+  ],
+  "sequential_selection_note": "Two accessible families selected for sequential development before inspecting the DeepSeek model-VOI results; not a frozen paper roster."
+}

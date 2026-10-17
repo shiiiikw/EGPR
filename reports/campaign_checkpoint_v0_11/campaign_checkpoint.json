@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-10-17T05:21:00.513683+00:00",
+  "authorized_total_usd": "200",
+  "development_ceiling_usd": "10",
+  "network_attempts": 1681,
+  "successful_inference_responses": 1677,
+  "usage_based_estimate_usd": "1.150171260",
+  "known_billed_component_usd": "0",
+  "unreconciled_reservations_usd": "0.51079696",
+  "unreconciled_reservations": 4,
+  "budget_occupancy_usd": "1.660968220",
+  "actual_billed_usd": null,
+  "access_blocked": false,
+  "ledger_sha256": "b7b197a32bdf6960e3bde9a2076cb7fc1e7b5a468c2ea82d78f950bbfeac42bd",
+  "privacy": "Only aggregates published; raw requests, responses, credentials and private disclosures remain local.",
+  "billing_note": "Estimates and unresolved reservations are not a provider invoice. Successful HTTP responses may still contain failed model outputs."
+}

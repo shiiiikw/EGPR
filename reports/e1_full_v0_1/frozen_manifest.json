@@ -1,0 +1,77 @@
+{
+  "api_calls": 0,
+  "arguments": {
+    "constant_rewards": false,
+    "correlated": false,
+    "memory": false,
+    "output": "results/e1_full_v0_1",
+    "smoke": false
+  },
+  "code_commit": "3d0df714bd122f549b70e979604545c0ca82c6b2",
+  "config": {
+    "B3_P_relationship": "same generic structural interval search and dependency cache in v0",
+    "allow_paid_calls": false,
+    "anchor_reuse": [
+      0,
+      0.25,
+      0.5,
+      0.75
+    ],
+    "holdout_claim": "none; algorithm diagnostic, not population inference",
+    "max_new_paid_usd": 0,
+    "memory": "separate optional traced-allocations diagnostic; primary timing uninstrumented",
+    "one_step_only": true,
+    "plan_source_commit": "d561304",
+    "plans": [
+      8,
+      32,
+      128
+    ],
+    "policies": [
+      "B1",
+      "B2",
+      "B3",
+      "A1",
+      "P"
+    ],
+    "public_states_per_instance": 3,
+    "resolution_probability": "4/5",
+    "seeds": [
+      13,
+      37,
+      73,
+      101,
+      137
+    ],
+    "source_data": "controlled fixtures only",
+    "tie_break": "STOP first, then query ID; no epsilon pruning",
+    "unknown_conditions": [
+      4,
+      8,
+      12
+    ],
+    "utility": "supported plan fixed reward plus optional Boolean preference bonus; unresolved/conditional=0",
+    "version": "egpr-finite-v0"
+  },
+  "file_sha256": {
+    "configs/offline_v0.json": "e7eac484eec65b64927878203b3688794ebf9beb6bbebd17d771023beb941872",
+    "docs/OFFLINE_PROTOCOL.md": "143cfde60ded2a7c3334406493a24d65f796e5a0a000eed94611a64668c746ad",
+    "scripts/qualify_foodpath.py": "030c078cf75e7e802f969857563d11ad5ed9225fd1c3ea0d72a0e0b168644a15",
+    "scripts/run_offline.py": "9a42559f5adb421bcf4c3d1d67a5ba98c78cc18bc3ed9cd05ff628ebfea71c24",
+    "src/egpr/__init__.py": "2ba03b98f0d9c8e5809270d52c3c66563523ee88f1f7d4912caaa48bcc65a2ef",
+    "src/egpr/fixtures.py": "e9e15452843d193e56fc7a88e722f721c401f617edd3f6de2a5b408fd6ca5566",
+    "src/egpr/ledger.py": "2672891f7f9996397bf01ccfb59cf21c6c5e25dbe3d393996ec46bfaf011b442",
+    "src/egpr/schema.py": "44ec5cb3e3e2e3ae24e85c589ef616804c55e41bbc255dedc4ee28c9229a9cf3",
+    "src/egpr/solver.py": "c170b6de4da11e20dae4bc74910852b5d671c362ce1267bae8801fe8d3550a4d",
+    "tests/test_core.py": "090c701862f362d550c91c4ebab14053baaa76418d8904687c6c990e0f6a9655",
+    "tests/test_ledger.py": "66662793c8f063fdb5c7613247993936b3181aada7d9c1978f5b5632bb2a7e20",
+    "uv.lock": "a2516e3d6b35da7313aca0ffd861c325e662e9df70daa9a65134063905a9e553"
+  },
+  "grid_size": 180,
+  "memory_instrumented": false,
+  "paid_usd": 0,
+  "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "processor": "x86_64",
+  "python": "3.13.12 (main, Feb  3 2026, 22:52:12) [Clang 21.1.4 ]",
+  "timing_scope": "algorithm including state/graph/bound/cache work; input generation and audit separate"
+}
